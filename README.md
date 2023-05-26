@@ -21,18 +21,39 @@ git clone https://github.com/GostOfSarina/sing-box-daily-telegram.git
 bash ./sing-REALITY-Box
 ```
 
-I add store public key in the original project folder.
 
 
-We have three configuration options
+## you to fill these files with your own information.
+
+
+We have three configuration options.
 
 ```/root/public_key.txt```
+I add store public key in the original project folder.
+
 
 ```/root/bot_token.txt```
 
 ```/root/chat_id.txt```
 
+
 get bot token from [BotFather](https://t.me/BotFather)
 get chat id from [Find Channel id](https://gist.github.com/mraaroncruz/e76d19f7d61d59419002db54030ebe35)
 
+public key is automatically make with sing-Realty-Box script.
 
+# Setup the cronjob
+```
+bash ./cronjob.sh
+```
+
+you can change the cronjob time in the cronjob.sh file. [easy set the time](https://crontab.guru/)
+
+
+see the cronjob list
+```crontab -l```
+
+# Get New Configuration
+```
+bash ./renew.sh
+```
