@@ -29,7 +29,7 @@ bash /root/sing-REALITY-box
 
 
 
-## you to fill these files with your own information.
+## Fill these files with your own information.
 
 
 We have three configuration options.
