@@ -2,8 +2,9 @@
 sing box with send configuration in the telegram channel every day.
 
 
-#Persian Explain
-[Persian Article for explain sb-server-configer ](https://telegra.ph/Small-family-servers-05-17)
+# Persian Articles
+[Explain sb-server-configer](https://telegra.ph/Small-family-servers-05-17)
+[Explain Sing-box](https://telegra.ph/How-run-Reality-protocol-with-Xray-or-Sing-box-Core-with-iSegaro-04-18)
 
 # Copywriting
 This project is fork of [sing-REALITY-box](https://github.com/deathline94/sing-REALITY-Box).
