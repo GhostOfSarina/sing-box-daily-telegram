@@ -3,22 +3,27 @@ sing box with send configuration in the telegram channel every day.
 
 
 #Persian Explain
-[Persian Article](https://telegra.ph/Small-family-servers-05-17)
+[Persian Article for explain sb-server-configer ](https://telegra.ph/Small-family-servers-05-17)
 
 # Copywriting
-This project is fork of [sing-REALITY-Box](https://github.com/deathline94/sing-REALITY-Box).
+This project is fork of [sing-REALITY-box](https://github.com/deathline94/sing-REALITY-Box).
 The main Idea is combine [sb-server-configer](https://github.com/hrostami/sb-server-configer) with bash script.
 It means that implement outstanding feature [sb-server-configer] with bash script.
 
 # How to use
-Clone the Project and run the sing-REALITY-Box bash script
+Clone the Project and run the sing-REALITY-box bash script
 
 ```
 git clone https://github.com/GostOfSarina/sing-box-daily-telegram.git
+
+cp -ar ./sing-box-daily-telegram /root/
 ```
 
 ```
-bash ./sing-REALITY-Box
+sudo chmod +x /root/sing-REALITY-box.sh
+sudo chmod +x /root/renew.sh
+
+bash /root/sing-REALITY-box
 ```
 
 
@@ -56,7 +61,6 @@ public key is automatically make with sing-Realty-Box script.
 bash ./cronjob.sh
 ```
 
-you can change the cronjob time in the cronjob.sh file. [easy set the time](https://crontab.guru/)
 
 
 see the cronjob list
@@ -72,6 +76,15 @@ for edit cronjob use these command
 ```crontab -e```
 
 [more information for cron job](https://www.youtube.com/watch?v=v952m13p-b4) 
+
+
+show log of cronjob ``` cat cronjob.log ```
+
+you can change the cronjob time in the cronjob.sh file. [easy set the time](https://crontab.guru/)
+
+
+for example use ```30 9 * * 6``` for the “At 09:30 on Saturday.” 
+
 
 # Get New Configuration
 
