@@ -64,7 +64,7 @@ if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/
     systemctl restart sing-box
     echo "DONE!"
     exit 0
-    ;;
+    
     
 fi
 
