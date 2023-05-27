@@ -32,6 +32,15 @@ We have three configuration options.
 I add store public key in the original project folder.
 
 
+```
+touch /root/bot_token.txt
+echo "2XXXXXXXX1:AXXXX_9XXXXXXXXXXXXXXXN-RXXXXXs" > /root/bot_token.txt
+
+touch /root/chat_id.txt
+echo "-10000000000000" > /root/chat_id.txt
+
+```
+
 ```/root/bot_token.txt```
 
 ```/root/chat_id.txt```
@@ -53,7 +62,21 @@ you can change the cronjob time in the cronjob.sh file. [easy set the time](http
 see the cronjob list
 ```crontab -l```
 
+result:
+
+```0 10 * * * /root/renew.sh > /root/cronjob.log 2>&1```
+
+
+
+for edit cronjob use these command
+```crontab -e```
+
+[more information for cron job](https://www.youtube.com/watch?v=v952m13p-b4) 
+
 # Get New Configuration
+
+for sending the new configuration to telegram channel
+
 ```
 bash ./renew.sh
 ```
