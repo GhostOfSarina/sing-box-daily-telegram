@@ -15,16 +15,16 @@ It means that implement outstanding feature [sb-server-configer] with bash scrip
 Clone the Project and run the sing-REALITY-box bash script
 
 ```
+cd /root
 git clone https://github.com/GostOfSarina/sing-box-daily-telegram.git
-
-cp -ar ./sing-box-daily-telegram /root/
+cp -ar ./sing-box-daily-telegram/* /root/
 ```
 
 ```
 sudo chmod +x /root/sing-REALITY-box.sh
 sudo chmod +x /root/renew.sh
 
-bash /root/sing-REALITY-box
+bash /root/sing-REALITY-box.sh
 ```
 
 
