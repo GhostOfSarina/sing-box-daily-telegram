@@ -3,6 +3,7 @@ sing box with send configuration in the telegram channel every day.
 
 
 # Persian Articles
+[A to Z make a Sing-box VPN for all members of the family](https://telegra.ph/A-to-Z-make-a-Sing-box-VPN-for-all-members-of-the-family-06-01)<br />
 [Explain sb-server-configer](https://telegra.ph/Small-family-servers-05-17)<br />
 [Explain Sing-box](https://telegra.ph/How-run-Reality-protocol-with-Xray-or-Sing-box-Core-with-iSegaro-04-18)
 
