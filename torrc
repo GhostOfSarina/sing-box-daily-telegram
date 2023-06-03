@@ -1,0 +1,5 @@
+BridgeRelay 1
+ORPort 9998
+ServerTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+ServerTransportListenAddr obfs4 0.0.0.0:9999
+ExtORPort auto

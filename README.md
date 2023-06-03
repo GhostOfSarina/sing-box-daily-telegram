@@ -108,3 +108,12 @@ bash ./subscriber.sh
 
 After you can share ```http://ip/subscribe.txt``` to members of the Telegram channel.
 And Also you can use ```http://ip/subscribe.html``` for fake html.
+
+# Install Obfs4proxy plugin (Optional)
+If you don't need this server or you don't want renew the VPS, you can install this plugin to help tor project.
+
+```
+ch /root
+sudo chmod +x /root/obfs4proxy.sh.sh
+bash ./obfs4proxy.sh.sh
+```
