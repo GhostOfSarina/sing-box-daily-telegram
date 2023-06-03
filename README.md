@@ -95,3 +95,16 @@ for sending the new configuration to telegram channel
 ```
 bash ./renew.sh
 ```
+
+
+# Fake Html and subscribe to Sing-box (Optional)
+This part is optional and it used for fake html and give url link to members of the Telegram channel.
+
+```
+ch /root
+sudo chmod +x /root/subscriber.sh
+bash ./subscriber.sh
+```
+
+After you can share ```http://ip/subscribe.txt``` to members of the Telegram channel.
+And Also you can use ```http://ip/subscribe.html``` for fake html.

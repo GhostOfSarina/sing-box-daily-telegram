@@ -59,6 +59,9 @@ if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/
     curl $telegram_url
 
 
+    touch /root/subscribe.txt
+    echo $server_link_base64 > /root/subscribe.txt
+
 
     # Restart sing-box service
     systemctl restart sing-box
