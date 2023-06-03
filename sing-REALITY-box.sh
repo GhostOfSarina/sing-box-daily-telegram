@@ -88,6 +88,9 @@ if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/
       echo ""
       echo $server_link_base64
 
+      touch /root/subscribe.txt
+      echo $server_link_base64 > /root/subscribe.txt
+
 	    # Restart sing-box service
 	    systemctl restart sing-box
 	    echo "DONE!"
@@ -274,6 +277,10 @@ if /root/sing-box check -c /root/reality.json; then
     echo "Here is the link for v2rayN and v2rayNG :"
     echo ""
     echo "$server_link"
+
+    touch /root/subscribe.txt
+    echo $server_link > /root/subscribe.txt
+
 else
     echo "Error in configuration. Aborting."
 fi
