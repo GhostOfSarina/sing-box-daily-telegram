@@ -97,7 +97,7 @@ bash ./renew.sh
 ```
 
 
-# Fake Html and subscribe to Sing-box (Optional)
+# Fake HTML and subscribe to Sing-box (Optional)
 This part is optional and it used for fake html and give url link to members of the Telegram channel.
 
 ```
