@@ -1,6 +1,5 @@
 package main
 
-
 type RealityJson struct {
 	Log struct {
 		Level     string `json:"level"`
@@ -21,11 +20,8 @@ type Inbound struct {
 	Sniff                    bool   `json:"sniff"`
 	SniffOverrideDestination bool   `json:"sniff_override_destination"`
 	DomainStrategy           string `json:"domain_strategy"`
-	Users                    []struct {
-		UUID string `json:"uuid"`
-		Flow string `json:"flow"`
-	} `json:"users"`
-	TLS struct {
+	Users                    []User `json:"users"`
+	TLS                      struct {
 		Enabled    bool   `json:"enabled"`
 		ServerName string `json:"server_name"`
 		Reality    struct {
@@ -38,4 +34,10 @@ type Inbound struct {
 			ShortID    []string `json:"short_id"`
 		} `json:"reality"`
 	} `json:"tls"`
+}
+
+type User struct {
+	NAME string `json:"name"`
+	UUID string `json:"uuid"`
+	Flow string `json:"flow"`
 }

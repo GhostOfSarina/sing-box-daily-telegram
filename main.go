@@ -2,11 +2,11 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net"
 	"os"
 	"strconv"
+	"strings"
 
 	"github.com/google/uuid"
 )
@@ -14,12 +14,14 @@ import (
 func main() {
 
 	currentReality := ReadFile()
+	currentInbound := currentReality.Inbounds[0]
 
 	var newReality RealityJson
 	newReality.Log = currentReality.Log
 	newReality.Outbounds = currentReality.Outbounds
 
 	publicKey := getPublicKey()
+
 	serverIP := GetOutboundIP().String()
 
 	StringConfigAll := ""
@@ -36,21 +38,29 @@ func main() {
 		"salamat.ir",
 		"tarhpro.ir"}
 
-	for i := 0; i < len(ports); i++ {
+	newReality.Inbounds = make([]Inbound, len(domains))
+	for i := 0; i < len(domains); i++ {
 
-		inbound := currentReality.Inbounds[0]
+		inbound := currentInbound
 		inbound.ListenPort = ports[i]
-		inbound.Users[0].UUID = uuid.New().String()
 		inbound.TLS.ServerName = domains[i]
 		inbound.TLS.Reality.Handshake.Server = domains[i]
-		newReality.Inbounds = append(newReality.Inbounds, inbound)
+
+		inbound.Users = []User{
+			{
+				NAME: "SB-" + domains[i],
+				UUID: uuid.New().String(),
+				Flow: "xtls-rprx-vision",
+			},
+		}
+
+		newReality.Inbounds[i] = inbound
 
 		StringConfig := "vless://" + inbound.Users[0].UUID + "@" + serverIP + ":" + strconv.Itoa(ports[i]) +
 			"?encryption=none&flow=xtls-rprx-vision&security=reality&sni=" + domains[i] +
-			"&fp=chrome&pbk=" + publicKey + "&sid=" + inbound.TLS.Reality.ShortID[0] + "&type=tcp&headerType=none#SING-BOX-" + domains[i]
+			"&fp=chrome&pbk=" + publicKey + "&sid=" + inbound.TLS.Reality.ShortID[0] + "&type=tcp&headerType=none#SB-" + domains[i]
 
 		StringConfigAll += StringConfig + "\n"
-		fmt.Println(StringConfig)
 
 	}
 
@@ -118,6 +128,8 @@ func getPublicKey() string {
 		log.Fatal("error during the ReadFile")
 	}
 	publicKey := string(dat)
+
+	publicKey = strings.TrimSpace(publicKey)
 
 	return publicKey
 }

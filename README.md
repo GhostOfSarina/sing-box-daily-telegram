@@ -117,3 +117,18 @@ ch /root
 sudo chmod +x /root/obfs4proxy.sh.sh
 bash ./obfs4proxy.sh.sh
 ```
+
+# Install bach maker for different SNI with Golang (Optional) need Fake HTML part
+
+for build go file
+```
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main main.go
+```
+
+for run only need to run these command and config register in subscribe part
+```
+./sing-box-telegram
+cp subscribe.txt /var/www/html/subscribe.txt
+systemctl restart sing-box
+
+```
