@@ -127,6 +127,8 @@ GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main main.go
 
 for run only need to run these command and config register in subscribe part
 ```
+wget https://github.com/GostOfSarina/sing-box-daily-telegram/releases/download/v.1.0.0/sing-box-telegram
+sudo chmod +x ./sing-box-telegram
 ./sing-box-telegram
 cp subscribe.txt /var/www/html/subscribe.txt
 systemctl restart sing-box
