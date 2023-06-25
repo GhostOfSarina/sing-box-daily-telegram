@@ -91,6 +91,11 @@ func main() {
 		fmt.Printf("error %s", err)
 	}
 
+	err = CallTelegram("You can also use this link to subscribe to all configuration:\n" + serverIP + "/subscribe.txt")
+	if err != nil {
+		fmt.Printf("error %s", err)
+	}
+
 }
 
 func CallTelegram(severLink string) error {
