@@ -23,9 +23,15 @@ cp -ar ./sing-box-daily-telegram/* /root/
 
 ```
 sudo chmod +x /root/sing-REALITY-box.sh
-sudo chmod +x /root/renew.sh
+
+wget https://github.com/GostOfSarina/sing-box-daily-telegram/releases/download/v.1.1.0/sing-box-telegram
+sudo chmod +x ./sing-box-telegram
+
 
 bash /root/sing-REALITY-box.sh
+
+./sing-box-telegram
+
 ```
 
 
@@ -110,7 +116,7 @@ And Also you can use ```http://ip/subscribe.html``` for fake html.
 
 for build go file
 ```
-GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main main.go
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o sing-box-telegram
 ```
 
 for run only need to run these command and config register in subscribe part

@@ -7,6 +7,7 @@ import (
 	"log"
 	"net"
 	"net/http"
+	"net/url"
 	"os"
 	"os/exec"
 	"strconv"
@@ -81,12 +82,10 @@ func main() {
 
 	SaveSubscribe("./subscribe.txt", StringConfigAll)
 
-	cmd, err := exec.Command("/bin/sh", "./multi-sni-maker/make-subscribe.sh").Output()
+	_, err = exec.Command("/bin/sh", "./multi-sni-maker/make-subscribe.sh").Output()
 	if err != nil {
 		fmt.Printf("error %s", err)
 	}
-	output := string(cmd)
-	fmt.Println(output)
 
 	CallTelegram(StringConfigZero)
 
@@ -99,7 +98,7 @@ func CallTelegram(severLink string) error {
 	chatId := chatId()
 
 	// make GET request to API to get user by ID
-	telegramUrl := "https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chatId + "&text=" + severLink
+	telegramUrl := "https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chatId + "&text=" + url.QueryEscape(severLink)
 
 	request, err := http.NewRequest("GET", telegramUrl, nil)
 	if err != nil {
