@@ -82,14 +82,13 @@ if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/
 
 
       server_link="vless://$uuid@$server_ip:$listen_port?encryption=none&flow=xtls-rprx-vision&security=reality&sni=$server_name&fp=chrome&pbk=$public_key&sid=$short_id&type=tcp&headerType=none#SING-BOX-TCP"
-      server_link_base64=$(printf $server_link | base64 -w0);
 
       echo "Here is the link for v2rayN and v2rayNG :"
       echo ""
-      echo $server_link_base64
+      echo $server_link
 
       touch /root/subscribe.txt
-      echo $server_link_base64 > /root/subscribe.txt
+      echo $server_link > /root/subscribe.txt
 
 	    # Restart sing-box service
 	    systemctl restart sing-box
@@ -167,13 +166,11 @@ public_key=$(echo "$key_pair" | awk '/PublicKey/ {print $2}' | tr -d '"')
 uuid=$(/root/sing-box generate uuid)
 short_id=$(/root/sing-box generate rand --hex 8)
 
-# Ask for listen port
-read -p "Enter desired listen port (default: 443): " listen_port
-listen_port=${listen_port:-443}
 
-# Ask for server name (sni)
-read -p "Enter server name/SNI (default: telewebion.com): " server_name
-server_name=${server_name:-telewebion.com}
+listen_port=443
+
+
+server_name=www.datadoghq.com
 
 # Retrieve the server IP address
 server_ip=$(curl -s https://api.ipify.org)
@@ -280,6 +277,17 @@ if /root/sing-box check -c /root/reality.json; then
 
     touch /root/subscribe.txt
     echo $server_link > /root/subscribe.txt
+
+
+    # Install apache2 and clone the website
+    apt-get install apache2
+
+    cd /var/www/html/
+    git clone https://github.com/codingstella/vCard-personal-portfolio.git
+    cp -ar ./vCard-personal-portfolio/*  /var/www/html/
+    rm -rf ./vCard-personal-portfolio/
+    cp /root/subscribe.txt /var/www/html/subscribe.txt 
+
 
 else
     echo "Error in configuration. Aborting."

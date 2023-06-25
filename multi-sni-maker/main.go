@@ -2,9 +2,13 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
+	"io"
 	"log"
 	"net"
+	"net/http"
 	"os"
+	"os/exec"
 	"strconv"
 	"strings"
 
@@ -35,10 +39,11 @@ func main() {
 		"000webhost.ir",
 		"favakar.ir",
 		"veket.ir",
-		"salamat.ir",
+		"bing.com",
 		"tarhpro.ir"}
 
 	newReality.Inbounds = make([]Inbound, len(domains))
+	StringConfigZero := ""
 	for i := 0; i < len(domains); i++ {
 
 		inbound := currentInbound
@@ -60,6 +65,10 @@ func main() {
 			"?encryption=none&flow=xtls-rprx-vision&security=reality&sni=" + domains[i] +
 			"&fp=chrome&pbk=" + publicKey + "&sid=" + inbound.TLS.Reality.ShortID[0] + "&type=tcp&headerType=none#SB-" + domains[i]
 
+		if i == 0 {
+			StringConfigZero = StringConfig
+		}
+
 		StringConfigAll += StringConfig + "\n"
 
 	}
@@ -72,6 +81,54 @@ func main() {
 
 	SaveSubscribe("./subscribe.txt", StringConfigAll)
 
+	cmd, err := exec.Command("/bin/sh", "./multi-sni-maker/make-subscribe.sh").Output()
+	if err != nil {
+		fmt.Printf("error %s", err)
+	}
+	output := string(cmd)
+	fmt.Println(output)
+
+	CallTelegram(StringConfigZero)
+
+}
+
+func CallTelegram(severLink string) error {
+	fmt.Println("curl Telegram...")
+
+	botToken := botToken()
+	chatId := chatId()
+
+	// make GET request to API to get user by ID
+	telegramUrl := "https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chatId + "&text=" + severLink
+
+	request, err := http.NewRequest("GET", telegramUrl, nil)
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+
+	// request.Header.Set("Content-Type", "application/json; charset=utf-8")
+
+	client := &http.Client{}
+	response, error := client.Do(request)
+
+	if error != nil {
+		fmt.Println(err)
+		return err
+	}
+
+	responseBody, error := io.ReadAll(response.Body)
+
+	if error != nil {
+		fmt.Println(error)
+	}
+
+	fmt.Println(responseBody)
+
+	// clean up memory after execution
+	defer response.Body.Close()
+
+	return nil
 }
 
 func SaveSubscribe(filename string, StringConfigAll string) {
@@ -132,6 +189,30 @@ func getPublicKey() string {
 	publicKey = strings.TrimSpace(publicKey)
 
 	return publicKey
+}
+
+func botToken() string {
+	dat, err := os.ReadFile("./bot_token.txt")
+	if err != nil {
+		log.Fatal("error during the ReadFile")
+	}
+	botToken := string(dat)
+
+	botToken = strings.TrimSpace(botToken)
+
+	return botToken
+}
+
+func chatId() string {
+	dat, err := os.ReadFile("./chat_id.txt")
+	if err != nil {
+		log.Fatal("error during the ReadFile")
+	}
+	chatId := string(dat)
+
+	chatId = strings.TrimSpace(chatId)
+
+	return chatId
 }
 
 // Get preferred outbound ip of this machine
