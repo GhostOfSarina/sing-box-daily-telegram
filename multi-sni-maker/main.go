@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io"
 	"log"
 	"net"
 	"net/http"
@@ -84,10 +83,13 @@ func main() {
 
 	_, err = exec.Command("/bin/sh", "./multi-sni-maker/make-subscribe.sh").Output()
 	if err != nil {
-		fmt.Printf("error %s", err)
+		fmt.Printf("error make-subscribe %s", err)
 	}
 
-	CallTelegram(StringConfigZero)
+	err = CallTelegram(StringConfigZero)
+	if err != nil {
+		fmt.Printf("error %s", err)
+	}
 
 }
 
@@ -100,32 +102,22 @@ func CallTelegram(severLink string) error {
 	// make GET request to API to get user by ID
 	telegramUrl := "https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chatId + "&text=" + url.QueryEscape(severLink)
 
-	request, err := http.NewRequest("GET", telegramUrl, nil)
+	fmt.Println(telegramUrl)
+
+	// Encode the URL
+	encodedURL, err := url.Parse(telegramUrl)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Error parsing URL:", err)
 		return err
 	}
 
-	// request.Header.Set("Content-Type", "application/json; charset=utf-8")
-
-	client := &http.Client{}
-	response, error := client.Do(request)
-
-	if error != nil {
-		fmt.Println(err)
+	// Make the GET request
+	resp, err := http.Get(encodedURL.String())
+	if err != nil {
+		fmt.Println("Error making GET request:", err)
 		return err
 	}
-
-	responseBody, error := io.ReadAll(response.Body)
-
-	if error != nil {
-		fmt.Println(error)
-	}
-
-	fmt.Println(responseBody)
-
-	// clean up memory after execution
-	defer response.Body.Close()
+	defer resp.Body.Close()
 
 	return nil
 }

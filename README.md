@@ -24,7 +24,7 @@ cp -ar ./sing-box-daily-telegram/* /root/
 ```
 sudo chmod +x /root/sing-REALITY-box.sh
 
-wget https://github.com/GostOfSarina/sing-box-daily-telegram/releases/download/v.1.1.0/sing-box-telegram
+wget https://github.com/GostOfSarina/sing-box-daily-telegram/releases/download/v.1.1.2/sing-box-telegram
 sudo chmod +x ./sing-box-telegram
 
 
@@ -119,14 +119,6 @@ for build go file
 GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o sing-box-telegram
 ```
 
-for run only need to run these command and config register in subscribe part
-```
-wget https://github.com/GostOfSarina/sing-box-daily-telegram/releases/download/v.1.1.0/sing-box-telegram
-sudo chmod +x ./sing-box-telegram
-./sing-box-telegram
-
-
-```
 
 
 # Install Obfs4proxy plugin (Optional)
