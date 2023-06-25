@@ -23,9 +23,15 @@ cp -ar ./sing-box-daily-telegram/* /root/
 
 ```
 sudo chmod +x /root/sing-REALITY-box.sh
-sudo chmod +x /root/renew.sh
+
+wget https://github.com/GostOfSarina/sing-box-daily-telegram/releases/download/v.1.1.2/sing-box-telegram
+sudo chmod +x ./sing-box-telegram
+
 
 bash /root/sing-REALITY-box.sh
+
+./sing-box-telegram
+
 ```
 
 
@@ -70,7 +76,7 @@ see the cronjob list
 
 result:
 
-```0 10 * * * /root/renew.sh > /root/cronjob.log 2>&1```
+```0 10 * * * /root/sing-box-telegram > /root/cronjob.log 2>&1```
 
 
 
@@ -93,18 +99,33 @@ for example use ```30 9 * * 6``` for the “At 09:30 on Saturday.”
 for sending the new configuration to telegram channel
 
 ```
-bash ./renew.sh
+bash ./sing-box-telegram
 ```
 
 
-# Fake HTML and subscribe to Sing-box (Optional)
+# Fake HTML and subscribe to Sing-box 
 This part is optional and it used for fake html and give url link to members of the Telegram channel.
+
+
+you can share ```http://ip/subscribe.txt``` to members of the Telegram channel.
+And Also you can use ```http://ip/subscribe.html``` for fake html.
+
+
+
+# Install bach maker for different SNI with Golang 
+
+for build go file
+```
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o sing-box-telegram
+```
+
+
+
+# Install Obfs4proxy plugin (Optional)
+If you don't need this server or you don't want renew the VPS, you can install this plugin to help tor project.
 
 ```
 ch /root
-sudo chmod +x /root/subscriber.sh
-bash ./subscriber.sh
+sudo chmod +x /root/obfs4proxy.sh.sh
+bash ./obfs4proxy.sh.sh
 ```
-
-After you can share ```http://ip/subscribe.txt``` to members of the Telegram channel.
-And Also you can use ```http://ip/subscribe.html``` for fake html.
