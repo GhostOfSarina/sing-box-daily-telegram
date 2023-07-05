@@ -41,9 +41,6 @@ bash /root/sing-REALITY-box.sh
 
 We have three configuration options.
 
-```/root/public_key.txt``` <br />
-I add store public key in the original project folder.
-
 
 ```
 touch /root/bot_token.txt
@@ -54,17 +51,30 @@ echo "-10000000000000" > /root/chat_id.txt
 
 ```
 
-```/root/bot_token.txt```
 
-```/root/chat_id.txt```
+only store the bot token and chat id in these files. noting more and then you can check the data is insert correctly.<br />
+
+
+```cat /root/bot_token.txt```
+
+```cat /root/chat_id.txt```
 
 
 get bot token from [BotFather](https://t.me/BotFather)<br />
 get chat id from [Find Channel id](https://gist.github.com/mraaroncruz/e76d19f7d61d59419002db54030ebe35)
 
-public key is automatically make with sing-Realty-Box script.
+public key is automatically make with sing-Realty-Box script.<br />
+
+
+I add store public key in the original project folder.
+```/root/public_key.txt``` <br />
+
+
 
 # Setup the cronjob
+Cron job is the time scheduler for run the script automatically.
+
+
 ```
 bash ./cronjob.sh
 ```
@@ -76,7 +86,7 @@ see the cronjob list
 
 result:
 
-```0 10 * * * /root/sing-box-telegram > /root/cronjob.log 2>&1```
+```0 22 1-31/3 * * /root/sing-box-telegram > /root/cronjob.log 2>&1```
 
 
 
