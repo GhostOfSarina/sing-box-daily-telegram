@@ -8,7 +8,7 @@ type RealityJson struct {
 	Inbounds  []Inbound `json:"inbounds"`
 	Outbounds []struct {
 		Type string `json:"type"`
-		Tag  string `json:"tag"`
+		Tag  string `json:"tag,omitempty"`
 	} `json:"outbounds"`
 	Route struct {
 		Rules []Rule `json:"rules"`

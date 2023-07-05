@@ -37,7 +37,7 @@ if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/
     echo "1. Reinstall"
     echo "2. Uninstall"
     echo ""
-    read -p "Enter your choice (1-3): " choice
+    read -p "Enter your choice (1-2): " choice
 
     case $choice in
         1)

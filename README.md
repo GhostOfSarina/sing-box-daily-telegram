@@ -24,11 +24,7 @@ cp -ar ./sing-box-daily-telegram/* /root/
 
 ```
 sudo chmod +x /root/sing-REALITY-box.sh
-
-
 bash /root/sing-REALITY-box.sh
-
-
 ```
 
 
