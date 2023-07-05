@@ -106,16 +106,19 @@ jq -n --arg listen_port "$listen_port" --arg server_name "$server_name" --arg pr
       }
     }
   ],
-  "outbounds": [
-    {
-      "type": "direct",
-      "tag": "direct"
-    },
-    {
-      "type": "block",
-      "tag": "block"
-    }
-  ]
+ "outbounds": [
+      {
+        "type": "direct"
+      },
+      {
+        "type": "direct",
+        "tag": "dns"
+      },
+      {
+        "type": "block",
+        "tag": "block"
+      }
+ ],
 }' > /root/reality.json
 
 # Create sing-box.service

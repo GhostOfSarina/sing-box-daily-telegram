@@ -20,11 +20,10 @@ func Block(newReality RealityJson) RealityJson {
 		Outbound: "block",
 	}
 	newReality.Route.Rules[1] = Rule{
-		Outbound: "block",
 		Geosite:  []string{"category-porn", "category-ads-all"},
+		Outbound: "block",
 	}
 	newReality.Route.Rules[2] = Rule{
-		Outbound: "block",
 		IPCidr: []string{"0.0.0.0/8",
 			"10.0.0.0/8",
 			"100.64.0.0/10",
@@ -40,6 +39,7 @@ func Block(newReality RealityJson) RealityJson {
 			"::1/128",
 			"fc00::/7",
 			"fe80::/10"},
+		Outbound: "block",
 	}
 	newReality.Route.Rules[3] = Rule{
 		Network:  "tcp",
