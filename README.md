@@ -11,6 +11,7 @@ sing box with send configuration in the telegram channel every day.
 This project is fork of [sing-REALITY-box](https://github.com/deathline94/sing-REALITY-Box).<br />
 The main Idea is combine [sb-server-configer](https://github.com/hrostami/sb-server-configer) with bash script.
 It means that implement outstanding feature [sb-server-configer] with bash script.
+iSegaro sing-box configuration [sing-box](https://raw.githubusercontent.com/iSegaro/Sing-Box/main/sing-box_config.json)
 
 # How to use
 Clone the Project and run the sing-REALITY-box bash script
@@ -23,15 +24,7 @@ cp -ar ./sing-box-daily-telegram/* /root/
 
 ```
 sudo chmod +x /root/sing-REALITY-box.sh
-
-wget https://github.com/GostOfSarina/sing-box-daily-telegram/releases/download/v.1.1.2/sing-box-telegram
-sudo chmod +x ./sing-box-telegram
-
-
 bash /root/sing-REALITY-box.sh
-
-./sing-box-telegram
-
 ```
 
 
@@ -39,11 +32,13 @@ bash /root/sing-REALITY-box.sh
 ## Fill these files with your own information.
 
 
-We have three configuration options.
+We have three configuration options. Get bot token and chat id from your telegram account and telegram bot father. <br />
 
-```/root/public_key.txt``` <br />
-I add store public key in the original project folder.
+get bot token from [BotFather](https://t.me/BotFather)<br />
+get chat id from [Find Channel id](https://gist.github.com/mraaroncruz/e76d19f7d61d59419002db54030ebe35)
 
+
+Fill the configuration inside the files.
 
 ```
 touch /root/bot_token.txt
@@ -54,17 +49,29 @@ echo "-10000000000000" > /root/chat_id.txt
 
 ```
 
-```/root/bot_token.txt```
 
-```/root/chat_id.txt```
+only store the bot token and chat id in these files. noting more and then you can check the data is insert correctly.<br />
 
 
-get bot token from [BotFather](https://t.me/BotFather)<br />
-get chat id from [Find Channel id](https://gist.github.com/mraaroncruz/e76d19f7d61d59419002db54030ebe35)
+```cat /root/bot_token.txt```
 
-public key is automatically make with sing-Realty-Box script.
+```cat /root/chat_id.txt```
+
+
+
+
+public key is automatically make with sing-Realty-Box script.<br />
+
+
+I add store public key in the original project folder.
+```/root/public_key.txt``` <br />
+
+
 
 # Setup the cronjob
+Cron job is the time scheduler for run the script automatically. after two days new configuration will send to your channel.
+
+
 ```
 bash ./cronjob.sh
 ```
@@ -76,7 +83,7 @@ see the cronjob list
 
 result:
 
-```0 10 * * * /root/sing-box-telegram > /root/cronjob.log 2>&1```
+```0 22 1-31/3 * * /root/sing-box-telegram > /root/cronjob.log 2>&1```
 
 
 
@@ -96,12 +103,17 @@ for example use ```30 9 * * 6``` for the “At 09:30 on Saturday.”
 
 # Get New Configuration
 
-for sending the new configuration to telegram channel
+For sending the new configuration to telegram channel. 
 
 ```
-bash ./sing-box-telegram
+
+wget https://github.com/GostOfSarina/sing-box-daily-telegram/releases/download/v.1.1.2/sing-box-telegram
+sudo chmod +x ./sing-box-telegram
+
+./sing-box-telegram
 ```
 
+Now check the configuration that send inside your channel.
 
 # Fake HTML and subscribe to Sing-box 
 This part is optional and it used for fake html and give url link to members of the Telegram channel.

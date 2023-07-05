@@ -1,76 +1,17 @@
 #!/bin/bash
 
+echo "Uninstalling..."
+# Stop and disable sing-box service
+systemctl stop sing-box
+systemctl disable sing-box
 
-#instal monitoring
-apt-get install nload
-apt-get install htop
-apt-get install iftop
-apt-get install vnstat
-apt-get install speedtest-cli
-apt-get install net-tools
+# Remove files
+rm /etc/systemd/system/sing-box.service
+rm /root/reality.json
+rm /root/sing-box
 
 
-# Check if jq is installed, and install it if not
-if ! command -v jq &> /dev/null; then
-    echo "jq is not installed. Installing..."
-    if [ -n "$(command -v apt)" ]; then
-        apt update
-        apt install -y jq
-    elif [ -n "$(command -v yum)" ]; then
-        yum install -y epel-release
-        yum install -y jq
-    elif [ -n "$(command -v dnf)" ]; then
-        dnf install -y jq
-    else
-        echo "Cannot install jq. Please install jq manually and rerun the script."
-        exit 1
-    fi
-fi
-
-# Check if reality.json, sing-box, and sing-box.service already exist
-if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/system/sing-box.service" ]; then
-
-    echo "Reality files already exist."
-    echo ""
-    echo "Please choose an option:"
-    echo ""
-    echo "1. Reinstall"
-    echo "2. Uninstall"
-    echo ""
-    read -p "Enter your choice (1-2): " choice
-
-    case $choice in
-        1)
-            echo "Reinstalling..."
-            # Uninstall previous installation
-            systemctl stop sing-box
-            systemctl disable sing-box
-            rm /etc/systemd/system/sing-box.service
-            rm /root/reality.json
-            rm /root/sing-box
-
-            # Proceed with installation
-            ;;
-        2)
-            echo "Uninstalling..."
-            # Stop and disable sing-box service
-            systemctl stop sing-box
-            systemctl disable sing-box
-
-            # Remove files
-            rm /etc/systemd/system/sing-box.service
-            rm /root/reality.json
-            rm /root/sing-box
-	    echo "DONE!"
-            exit 0
-            ;;
-        *)
-            echo "Invalid choice. Exiting."
-            exit 1
-            ;;
-    esac
-fi
-
+echo "Unistall DONE!"
 
 
 # Fetch the latest (including pre-releases) release version number from GitHub API
@@ -237,19 +178,9 @@ if /root/sing-box check -c /root/reality.json; then
 
 
 
-
-
-    # Install apache2 and clone the website
-    apt-get install apache2
-
-    cd /var/www/html/
-    git clone https://github.com/codingstella/vCard-personal-portfolio.git
-    cp -ar ./vCard-personal-portfolio/*  /var/www/html/
-    rm -rf ./vCard-personal-portfolio/
-    cp /root/subscribe.txt /var/www/html/subscribe.txt 
-
-
 else
     echo "Error in configuration. Aborting."
 fi
+
+
 

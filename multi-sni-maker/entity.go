@@ -1,15 +1,33 @@
 package main
 
 type RealityJson struct {
-	Log struct {
-		Level     string `json:"level"`
-		Timestamp bool   `json:"timestamp"`
-	} `json:"log"`
+	DNS struct {
+		Servers  []Server `json:"servers"`
+		Strategy string   `json:"strategy"`
+	} `json:"dns"`
 	Inbounds  []Inbound `json:"inbounds"`
 	Outbounds []struct {
 		Type string `json:"type"`
-		Tag  string `json:"tag"`
+		Tag  string `json:"tag,omitempty"`
 	} `json:"outbounds"`
+	Route struct {
+		Rules []Rule `json:"rules"`
+	} `json:"route"`
+}
+
+type Server struct {
+	Address string `json:"address"`
+	Detour  string `json:"detour"`
+}
+
+type Rule struct {
+	Geoip    []string `json:"geoip,omitempty"`
+	Outbound string   `json:"outbound"`
+	Geosite  []string `json:"geosite,omitempty"`
+	IPCidr   []string `json:"ip_cidr,omitempty"`
+	Network  string   `json:"network,omitempty"`
+	Port     []int    `json:"port,omitempty"`
+	Domain   []string `json:"domain,omitempty"`
 }
 
 type Inbound struct {
