@@ -83,7 +83,7 @@ see the cronjob list
 
 result:
 
-```0 22 1-31/3 * * /root/sing-box-telegram > /root/cronjob.log 2>&1```
+```0 9 1-31/3 * * /root/sing-box-telegram > /root/cronjob.log 2>&1```
 
 
 
