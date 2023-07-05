@@ -30,17 +30,24 @@ func main() {
 
 	StringConfigAll := ""
 
-	ports := []int{443, 8081, 8082, 8083, 8084, 8085, 8086, 8087, 8088, 8089}
+	ports := []int{443, 8081, 8082, 8083, 8084, 8085, 8086, 8087, 8088, 8089, 8090}
 	domains := []string{"www.datadoghq.com",
-		"apppash.ir",
-		"rr2.ir",
-		"bazarmag.ir",
-		"shiralinia.ir",
 		"000webhost.ir",
+		"speedtest.net",
+		"speed.cloudflare.com",
+		"fruitfulcode.com",
 		"favakar.ir",
 		"veket.ir",
-		"bing.com",
-		"tarhpro.ir"}
+		"benecke.com",
+		"tarhpro.ir",
+		"fernandotrueba.com",
+		"mathhub.info",
+	}
+
+	if len(ports) != len(domains) {
+		log.Fatal("length ports and domain is not equals")
+
+	}
 
 	newReality.Inbounds = make([]Inbound, len(domains))
 	StringConfigZero := ""
