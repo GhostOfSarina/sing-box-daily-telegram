@@ -13,7 +13,7 @@ func Block(newReality RealityJson) RealityJson {
 	}
 	newReality.DNS.Strategy = "ipv4_only"
 
-	newReality.Route.Rules = make([]Rule, 2)
+	newReality.Route.Rules = make([]Rule, 4)
 
 	newReality.Route.Rules[0] = Rule{
 		Geoip:    []string{"cn", "ir", "private"},
