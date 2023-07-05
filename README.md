@@ -107,7 +107,7 @@ For sending the new configuration to telegram channel.
 
 ```
 
-wget https://github.com/GostOfSarina/sing-box-daily-telegram/releases/download/v.1.1.2/sing-box-telegram
+wget https://github.com/GostOfSarina/sing-box-daily-telegram/releases/download/v.1.2.0/sing-box-telegram
 sudo chmod +x ./sing-box-telegram
 
 ./sing-box-telegram
