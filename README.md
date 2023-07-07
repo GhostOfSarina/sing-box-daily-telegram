@@ -14,7 +14,7 @@ It means that implement outstanding feature [sb-server-configer] with bash scrip
 iSegaro sing-box configuration [sing-box](https://raw.githubusercontent.com/iSegaro/Sing-Box/main/sing-box_config.json)
 
 
-# Fast Way to Use
+# How to install
 For fast way install and run this service you need download below files and execute them. 
 For security reason, I recommend you to change ssh port. change 9001 to any port that you want.
 
@@ -28,9 +28,9 @@ after you need ``` -p 9001 ``` for ssh connection.for example ```ssh root@ip -p 
 Download bash files and add permission for execute.
 ```
 cd /root
-wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/develop/first-time-install-sing-box.sh
-wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/develop/reinstall-sing-box.sh
-wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/develop/make-subscribe.sh
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/first-time-install-sing-box.sh
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/reinstall-sing-box.sh
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/make-subscribe.sh
 
 sudo chmod +x /root/first-time-install-sing-box.sh
 sudo chmod +x /root/reinstall-sing-box.sh
@@ -43,19 +43,8 @@ Run the install Sing box command
 bash /root/first-time-install-sing-box.sh
 ```
 
-For sending the new configuration to telegram channel. 
 
-```
-
-wget https://github.com/GhostOfSarina/sing-box-daily-telegram/releases/download/v.1.2.1/sing-box-telegram
-sudo chmod +x ./sing-box-telegram
-
-./sing-box-telegram
-```
-
-
-
-## Fill bot token and chanel id files with your own information.
+# Fill bot token and chanel id files with your own information.
 
 
 We have two configuration options. Get bot token and chat id from your telegram account and telegram bot father. <br />
@@ -84,10 +73,22 @@ only store the bot token and chat id in these files. noting more and then you ca
 ```cat /root/chat_id.txt```
 
 
-
-
 public key is automatically make with sing-Realty-Box script.<br />
 
+
+# For sending the new configuration to telegram channel. 
+
+Download execute file from golang program and execute the file. you can see the code in multi sni maker folder.
+
+```
+
+wget https://github.com/GhostOfSarina/sing-box-daily-telegram/releases/download/v.1.2.1/sing-box-telegram
+sudo chmod +x ./sing-box-telegram
+
+./sing-box-telegram
+```
+
+after command execution the configuration send to your telegram channel.
 
 
 # Modify the cronjob
