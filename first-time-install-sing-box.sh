@@ -1,17 +1,68 @@
 #!/bin/bash
 
-echo "Uninstalling..."
-# Stop and disable sing-box service
-systemctl stop sing-box
-systemctl disable sing-box
 
-# Remove files
-rm /etc/systemd/system/sing-box.service
-rm /root/reality.json
-rm /root/sing-box
+#instal monitoring
+apt-get update
+apt-get install nload
+apt-get install htop
+apt-get install iftop
+apt-get install vnstat
+apt-get install speedtest-cli
+apt-get install net-tools
+apt-get install -y jq
 
 
-echo "Unistall DONE!"
+
+# Check if reality.json, sing-box, and sing-box.service already exist
+if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/system/sing-box.service" ]; then
+
+    echo "Reality files already exist."
+    echo ""
+    echo "Please choose an option:"
+    echo ""
+    echo "1. Reinstall"
+    echo "2. Uninstall"
+    echo ""
+    read -p "Enter your choice (1-2): " choice
+
+    case $choice in
+        1)
+            echo "Reinstalling..."
+            # Uninstall previous installation
+            systemctl stop sing-box
+            systemctl disable sing-box
+            rm /etc/systemd/system/sing-box.service
+            rm /root/reality.json
+            rm /root/sing-box
+            rm /root/subscribe.txt
+            rm /root/public_key.txt
+
+            # Proceed with installation
+            ;;
+        2)
+            echo "Uninstalling..."
+            # Stop and disable sing-box service
+            systemctl stop sing-box
+            systemctl disable sing-box
+
+            # Remove files
+            rm /etc/systemd/system/sing-box.service
+            rm /root/reality.json
+            rm /root/sing-box
+            rm /root/chat_id.txt
+            rm /root/subscribe.txt
+            rm /root/public_key.txt
+            rm /root/bot_token.txt
+	    echo "DONE!"
+            exit 0
+            ;;
+        *)
+            echo "Invalid choice. Exiting."
+            exit 1
+            ;;
+    esac
+fi
+
 
 
 # Fetch the latest (including pre-releases) release version number from GitHub API
@@ -178,9 +229,25 @@ if /root/sing-box check -c /root/reality.json; then
 
 
 
+
+
+    # Install apache2 and clone the website
+    apt-get install apache2
+
+    cd /var/www/html/
+    git clone https://github.com/codingstella/vCard-personal-portfolio.git
+    cp -ar ./vCard-personal-portfolio/*  /var/www/html/
+    rm -rf ./vCard-personal-portfolio/
+    cp /root/subscribe.txt /var/www/html/subscribe.txt 
+
+
+    # Install cron job 
+    croncmd="/root/sing-box-telegram > /root/cronjob.log 2>&1"
+    cronjob="0 9 1-31/3 * * $croncmd"
+    ( crontab -l | grep -v -F "$croncmd" ; echo "$cronjob" ) | crontab -
+
+
 else
     echo "Error in configuration. Aborting."
 fi
-
-
 
