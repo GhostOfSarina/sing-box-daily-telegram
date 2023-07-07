@@ -13,6 +13,25 @@ The main Idea is combine [sb-server-configer](https://github.com/hrostami/sb-ser
 It means that implement outstanding feature [sb-server-configer] with bash script.
 iSegaro sing-box configuration [sing-box](https://raw.githubusercontent.com/iSegaro/Sing-Box/main/sing-box_config.json)
 
+
+# Fast Way to Use
+For fast way install and run this service you need download below files and execute them. 
+
+
+For security reason, I recommend you to change ssh port. change 9001 to any port that you want.
+
+```
+echo "Port 9001" >> /etc/ssh/sshd_config
+systemctl restart sshd
+```
+after you need ``` -p 9001 ``` for ssh connection.for example ```ssh root@ip -p 9001```
+
+cd /root
+
+sudo chmod +x /root/sing-REALITY-box.sh
+bash /root/sing-REALITY-box.sh
+
+
 # How to use
 Clone the Project and run the sing-REALITY-box bash script
 
@@ -68,14 +87,8 @@ I add store public key in the original project folder.
 
 
 
-# Setup the cronjob
+# Modify the cronjob
 Cron job is the time scheduler for run the script automatically. after two days new configuration will send to your channel.
-
-
-```
-bash ./cronjob.sh
-```
-
 
 
 see the cronjob list

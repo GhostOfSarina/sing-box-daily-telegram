@@ -12,7 +12,7 @@ import (
 func main() {
 
 	//Reinstall sing box
-	_, err := exec.Command("/bin/sh", "./multi-sni-maker/reinstall-sing-box.sh").Output()
+	_, err := exec.Command("/bin/sh", "./reinstall-sing-box.sh").Output()
 	if err != nil {
 		fmt.Printf("error make-subscribe %s", err)
 	}
@@ -31,7 +31,7 @@ func main() {
 
 	StringConfigAll := ""
 
-	ports := []int{443, 8081, 8082, 8083, 8084, 8085, 8086, 8087, 8088, 8089, 8090}
+	ports := []int{443, 22, 23, 3389, 110, 143, 8086, 8087, 8088, 8089, 8090}
 	domains := []string{"www.datadoghq.com",
 		"000webhost.ir",
 		"speedtest.net",
@@ -92,7 +92,7 @@ func main() {
 
 	SaveSubscribe("./subscribe.txt", StringConfigAll)
 
-	_, err = exec.Command("/bin/sh", "./multi-sni-maker/make-subscribe.sh").Output()
+	_, err = exec.Command("/bin/sh", "./make-subscribe.sh").Output()
 	if err != nil {
 		fmt.Printf("error make-subscribe %s", err)
 	}
