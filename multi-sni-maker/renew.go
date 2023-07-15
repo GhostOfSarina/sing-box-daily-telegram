@@ -36,6 +36,8 @@ func RenewConfigurations(setting Setting, serverIP string, newReality RealityJso
 		newReality.Inbounds[counter] = inbound
 
 		if setting.GRPC[counter] {
+
+			newReality.Inbounds[counter].Transport = new(Transport)
 			newReality.Inbounds[counter].Transport.Type = "grpc"
 			newReality.Inbounds[counter].Transport.ServiceName = name
 			newReality.Inbounds[counter].Transport.IdleTimeout = "15s"

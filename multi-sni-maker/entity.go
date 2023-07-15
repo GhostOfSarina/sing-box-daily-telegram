@@ -52,13 +52,7 @@ type Inbound struct {
 			ShortID    []string `json:"short_id"`
 		} `json:"reality"`
 	} `json:"tls"`
-	Transport struct {
-		Type                string `json:"type,omitempty"`
-		ServiceName         string `json:"service_name,omitempty"`
-		IdleTimeout         string `json:"idle_timeout,omitempty"`
-		PingTimeout         string `json:"ping_timeout,omitempty"`
-		PermitWithoutStream bool   `json:"permit_without_stream,omitempty"`
-	} `json:"transport"`
+	*Transport `json:"transport,omitempty"`
 }
 
 type User struct {
@@ -67,6 +61,13 @@ type User struct {
 	Flow string `json:"flow"`
 }
 
+type Transport struct {
+	Type                string `json:"type,omitempty"`
+	ServiceName         string `json:"service_name,omitempty"`
+	IdleTimeout         string `json:"idle_timeout,omitempty"`
+	PingTimeout         string `json:"ping_timeout,omitempty"`
+	PermitWithoutStream bool   `json:"permit_without_stream,omitempty"`
+}
 type Setting struct {
 	Ports               []int    `json:"ports"`
 	Domains             []string `json:"domains"`
