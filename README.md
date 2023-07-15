@@ -91,6 +91,7 @@ For security reason, I recommend you to change ssh port. change 9001 to any port
 ```
 echo "Port 9001" >> /etc/ssh/sshd_config
 systemctl restart sshd
+service ssh restart
 ```
 after you need ``` -p 9001 ``` for ssh connection.for example ```ssh root@ip -p 9001``` <br />
 
