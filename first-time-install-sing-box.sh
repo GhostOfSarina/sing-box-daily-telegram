@@ -1,6 +1,26 @@
 #!/bin/bash
 
 
+
+#easy install
+
+cd /root
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/first-time-install-sing-box.sh
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/reinstall-sing-box.sh
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/make-subscribe.sh
+
+sudo chmod +x /root/first-time-install-sing-box.sh
+sudo chmod +x /root/reinstall-sing-box.sh
+sudo chmod +x /root/make-subscribe.sh
+
+
+wget https://github.com/GhostOfSarina/sing-box-daily-telegram/releases/download/v.1.2.1/sing-box-telegram
+sudo chmod +x ./sing-box-telegram
+
+
+
+
+
 #instal monitoring
 apt-get update
 apt-get install nload
@@ -36,6 +56,8 @@ if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/
             rm /root/sing-box
             rm /root/subscribe.txt
             rm /root/public_key.txt
+            rm /root/sing-box-telegram
+
 
             # Proceed with installation
             ;;
@@ -53,6 +75,7 @@ if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/
             rm /root/subscribe.txt
             rm /root/public_key.txt
             rm /root/bot_token.txt
+            rm /root/sing-box-telegram
 	    echo "DONE!"
             exit 0
             ;;
