@@ -38,7 +38,7 @@ func RenewConfigurations(setting Setting, serverIP string, newReality RealityJso
 		if setting.GRPC[counter] {
 
 			inbound.Users[0].Flow = ""
-			// inbound.Users[0].Name = ""
+			inbound.Users[0].Name = ""
 
 			newReality.Inbounds[counter].Transport = new(Transport)
 			newReality.Inbounds[counter].Transport.Type = "grpc"

@@ -66,7 +66,7 @@ type Transport struct {
 	ServiceName         string `json:"service_name,omitempty"`
 	IdleTimeout         string `json:"idle_timeout,omitempty"`
 	PingTimeout         string `json:"ping_timeout,omitempty"`
-	PermitWithoutStream bool   `json:"permit_without_stream,omitempty"`
+	PermitWithoutStream bool   `json:"permit_without_stream"`
 }
 type Setting struct {
 	Ports               []int    `json:"ports"`
