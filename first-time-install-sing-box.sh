@@ -73,10 +73,9 @@ if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/
             rm /etc/systemd/system/sing-box.service
             rm /root/reality.json
             rm /root/sing-box
-            rm /root/chat_id.txt
-            rm /root/subscribe.txt
+            rm /root/subscribe.*
+            rm -rf /var/www/hml/subscribe.*
             rm /root/public_key.txt
-            rm /root/bot_token.txt
             rm /root/sing-box-telegram
 	    echo "DONE!"
             exit 0
