@@ -52,10 +52,29 @@ type Inbound struct {
 			ShortID    []string `json:"short_id"`
 		} `json:"reality"`
 	} `json:"tls"`
+	Transport struct {
+		Type                string `json:"type,omitempty"`
+		ServiceName         string `json:"service_name,omitempty"`
+		IdleTimeout         string `json:"idle_timeout,omitempty"`
+		PingTimeout         string `json:"ping_timeout,omitempty"`
+		PermitWithoutStream bool   `json:"permit_without_stream,omitempty"`
+	} `json:"transport"`
 }
 
 type User struct {
 	NAME string `json:"name"`
 	UUID string `json:"uuid"`
 	Flow string `json:"flow"`
+}
+
+type Setting struct {
+	Ports               []int    `json:"ports"`
+	Domains             []string `json:"domains"`
+	GRPC                []bool   `json:"grpc"`
+	BotToken            string   `json:"bot_token"`
+	ChatID              string   `json:"chat_id"`
+	DonateURL           string   `json:"donate_url"`
+	DynamicSubscription bool     `json:"dynamic_subscription"`
+	ChannelName         string   `json:"channel_name"`
+	SendVNstat          bool     `json:"send_vnstat"`
 }
