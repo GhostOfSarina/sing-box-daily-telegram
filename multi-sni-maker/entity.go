@@ -56,7 +56,7 @@ type Inbound struct {
 }
 
 type User struct {
-	NAME string `json:"name"`
+	Name string `json:"name"`
 	UUID string `json:"uuid"`
 	Flow string `json:"flow"`
 }

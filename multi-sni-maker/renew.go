@@ -27,7 +27,7 @@ func RenewConfigurations(setting Setting, serverIP string, newReality RealityJso
 		name := setting.ChannelName + "-" + setting.Domains[counter]
 		inbound.Users = []User{
 			{
-				NAME: name,
+				Name: name,
 				UUID: uuid.New().String(),
 				Flow: "xtls-rprx-vision",
 			},
@@ -36,6 +36,9 @@ func RenewConfigurations(setting Setting, serverIP string, newReality RealityJso
 		newReality.Inbounds[counter] = inbound
 
 		if setting.GRPC[counter] {
+
+			inbound.Users[0].Flow = ""
+			// inbound.Users[0].Name = ""
 
 			newReality.Inbounds[counter].Transport = new(Transport)
 			newReality.Inbounds[counter].Transport.Type = "grpc"
