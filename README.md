@@ -52,7 +52,7 @@ Edit this setting file base on your needs.
 cd /root
 touch /root/setting.json
 echo "{
-    \"ports\": [443, 22, 8080, 8880, 10050, 53, 2082, 8443, 6442, 2096 ],
+    \"ports\": [443, 22, 2087, 8880, 10050, 53, 2082, 8443, 6442, 2096 ],
     \"domains\": [
         \"www.datadoghq.com\",
         \"000webhost.ir\",

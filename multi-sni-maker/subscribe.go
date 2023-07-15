@@ -3,17 +3,17 @@ package main
 import (
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
 	"os/exec"
-
-	"github.com/google/uuid"
+	"strconv"
 )
 
 func DoSubscribe(setting Setting, StringConfigAll string) (subscriptionNameLink string, err error) {
 
 	if setting.DynamicSubscription {
-		randomUUID := uuid.New().String()
-		subscriptionNameLink = "subscribe." + randomUUID + ".txt"
+		randomUUID := rand.Intn(10000)
+		subscriptionNameLink = "subscribe." + strconv.Itoa(randomUUID) + ".txt"
 	} else {
 		subscriptionNameLink = "subscribe.txt"
 	}
