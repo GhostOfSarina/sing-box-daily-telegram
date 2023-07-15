@@ -12,7 +12,7 @@ func CallDonate(severLink string, setting Setting) error {
 	// make GET request to API to get user by ID
 	donateURL := setting.DonateURL + "?data=" + url.QueryEscape(severLink)
 
-	fmt.Println(donateURL)
+	// fmt.Println(donateURL)
 
 	// Encode the URL
 	encodedURL, err := url.Parse(donateURL)
