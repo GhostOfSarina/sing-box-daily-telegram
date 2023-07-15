@@ -5,11 +5,9 @@
 #easy install
 
 cd /root
-wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/first-time-install-sing-box.sh
 wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/reinstall-sing-box.sh
 wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/make-subscribe.sh
 
-sudo chmod +x /root/first-time-install-sing-box.sh
 sudo chmod +x /root/reinstall-sing-box.sh
 sudo chmod +x /root/make-subscribe.sh
 
