@@ -6,14 +6,11 @@ import (
 	"net/url"
 )
 
-func CallTelegram(severLink string) error {
+func CallTelegram(severLink string, setting Setting) error {
 	fmt.Println("curl Telegram...")
 
-	botToken := botToken()
-	chatId := chatId()
-
 	// make GET request to API to get user by ID
-	telegramUrl := "https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chatId + "&text=" + url.QueryEscape(severLink)
+	telegramUrl := "https://api.telegram.org/bot" + setting.BotToken + "/sendMessage?chat_id=" + setting.ChatID + "&text=" + url.QueryEscape(severLink)
 
 	fmt.Println(telegramUrl)
 
