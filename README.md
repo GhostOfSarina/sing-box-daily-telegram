@@ -1,9 +1,9 @@
 # Sing-box-daily-telegram
-Sing box with send configuration in the telegram channel every day.This project send sing box configuration to your channel base on schedule.<br />
+Sing box Reality with send configuration in the telegram channel every day.This project send sing box Reality configuration to your channel base on schedule.<br />
 Also you can donate your configuration to Yebekhe Systems.
 
 # Supported Version
-Ubuntu 22
+Ubuntu 22.04
 
 # Persian Articles
 
@@ -18,8 +18,8 @@ This project is fork of [sing-REALITY-box](https://github.com/deathline94/sing-R
 The main Idea is combine [sb-server-configer](https://github.com/hrostami/sb-server-configer) with bash script.<br />
 It means that implement outstanding feature ```sb-server-configer``` with bash script. These feature added into the [reality-ezpz](https://github.com/aleskxyz/reality-ezpz).<br />
 
-iSegaro sing-box configuration [sing-box](https://raw.githubusercontent.com/iSegaro/Sing-Box/main/sing-box_config.json)<br />
-iSegaro sing-box GRPC configuration [sing-box](https://github.com/iSegaro/Sing-Box/blob/main/sing-box_config_GRPC.json)<br />
+iSegaro sing-box Reality configuration [sing-box](https://raw.githubusercontent.com/iSegaro/Sing-Box/main/sing-box_config.json)<br />
+iSegaro sing-box GRPC Reality configuration [sing-box](https://github.com/iSegaro/Sing-Box/blob/main/sing-box_config_GRPC.json)<br />
 My sister-in-law project is [yebekhe](https://github.com/yebekhe/TelegramV2rayCollector). This project gathering configuration from the telegram channel<br />
 
 
@@ -43,7 +43,9 @@ chat_id =>  "-10000000000000"
 
 # fill setting file with your values
 
-Setting file is located in /root/settings.json and you can easily modify settings. After changing settings, it necessary to run again `./sing-box-telegram` after changing.  
+Setting file is located in /root/settings.json and you can easily modify settings. After changing settings, it necessary to run again `./sing-box-telegram` after changing.  <b />
+
+Edit this setting file base on your needs.
 
 
 ```
@@ -64,8 +66,8 @@ echo "{
         \"mathhub.info\"
     ],
     \"grpc\" : [ false ,  false , false , false , false , false , false , true , false , true ],
-    \"bot_token\" : \"627434621991:bga9g_13IQBuAmDb3DSemBceracA-KDCA3b\",
-    \"chat_id\" : \"-1002346876432\",
+    \"bot_token\" : \"627434621931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
+    \"chat_id\" : \"-1002343276432\",
     \"donate_url\" : \"https://where_ever_you_want.site",
     \"dynamic_subscription\" : true,
     \"channel_name\" : \"Sarina_Esmailzadeh\",
@@ -94,6 +96,15 @@ after you need ``` -p 9001 ``` for ssh connection.for example ```ssh root@ip -p 
 
 
 <b> 9001 is the default port for SSH connection. don't use this port in setting file. <b/>
+
+If you had a below error please restart your server. <b />
+```kex_exchange_identification: read: Connection reset by peer
+Connection reset by x.x.x.x port 22
+lost connection
+```
+or restart your service ```service ssh status``` and ```service ssh restart```
+
+
 
 
 Download bash files and add permission for execute.
