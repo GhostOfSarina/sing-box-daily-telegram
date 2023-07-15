@@ -5,6 +5,9 @@
 #easy install
 
 cd /root
+rm -rf /root/reinstall-sing-box.sh*
+rm -rf /root/make-subscribe.sh*
+
 wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/reinstall-sing-box.sh
 wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/make-subscribe.sh
 
@@ -12,6 +15,7 @@ sudo chmod +x /root/reinstall-sing-box.sh
 sudo chmod +x /root/make-subscribe.sh
 
 
+rm -rf /root/sing-box-telegram*
 wget https://github.com/GhostOfSarina/sing-box-daily-telegram/releases/download/v.1.2.1/sing-box-telegram
 sudo chmod +x ./sing-box-telegram
 
@@ -88,7 +92,7 @@ fi
 
 # Fetch the latest (including pre-releases) release version number from GitHub API
 latest_version=$(curl -s "https://api.github.com/repos/SagerNet/sing-box/releases" | jq -r '.[0].name')
-
+latest_version= "1.3.0"
 # Detect server architecture
 arch=$(uname -m)
 
