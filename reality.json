@@ -23,8 +23,8 @@
    "domain_strategy": "ipv4_only",
    "users": [
     {
-     "name": "the_way_of_freedom-www.datadoghq.com",
-     "uuid": "c27341ed-a44b-447e-a10b-32b479580442",
+     "name": "channel-www.datadoghq.com",
+     "uuid": "8cb926db-77d9-410d-80b1-88821b5dd3d3",
      "flow": "xtls-rprx-vision"
     }
    ],
@@ -37,9 +37,9 @@
       "server": "www.datadoghq.com",
       "server_port": 443
      },
-     "private_key": "iKlnA3_bBuYl4MEhrr60jHImIgut55NFe9ttmSrLGns",
+     "private_key": "QEB_bkfAXWZtvxGCcWau07fUAok0pib4pDa5BX0j9U0",
      "short_id": [
-      "2b2c54d8bc12fe16"
+      "554b86ae2f09fe41"
      ]
     }
    }
@@ -54,8 +54,8 @@
    "domain_strategy": "ipv4_only",
    "users": [
     {
-     "name": "the_way_of_freedom-000webhost.ir",
-     "uuid": "c23f5bec-6cfc-445d-92cf-c50d2af96c65",
+     "name": "channel-000webhost.ir",
+     "uuid": "543fdf82-04f3-4314-80c8-6fc8dc60b50e",
      "flow": "xtls-rprx-vision"
     }
    ],
@@ -68,9 +68,9 @@
       "server": "000webhost.ir",
       "server_port": 443
      },
-     "private_key": "iKlnA3_bBuYl4MEhrr60jHImIgut55NFe9ttmSrLGns",
+     "private_key": "QEB_bkfAXWZtvxGCcWau07fUAok0pib4pDa5BX0j9U0",
      "short_id": [
-      "2b2c54d8bc12fe16"
+      "554b86ae2f09fe41"
      ]
     }
    }
@@ -85,8 +85,8 @@
    "domain_strategy": "ipv4_only",
    "users": [
     {
-     "name": "the_way_of_freedom-speedtest.net",
-     "uuid": "6d35e7cc-9154-4522-a4fd-58c19bad6e5e",
+     "name": "channel-speedtest.net",
+     "uuid": "b0cd7d67-aed2-4cfd-baca-530c4b3ef886",
      "flow": "xtls-rprx-vision"
     }
    ],
@@ -99,9 +99,9 @@
       "server": "speedtest.net",
       "server_port": 443
      },
-     "private_key": "iKlnA3_bBuYl4MEhrr60jHImIgut55NFe9ttmSrLGns",
+     "private_key": "QEB_bkfAXWZtvxGCcWau07fUAok0pib4pDa5BX0j9U0",
      "short_id": [
-      "2b2c54d8bc12fe16"
+      "554b86ae2f09fe41"
      ]
     }
    }
@@ -116,8 +116,8 @@
    "domain_strategy": "ipv4_only",
    "users": [
     {
-     "name": "the_way_of_freedom-speed.cloudflare.com",
-     "uuid": "eb764566-6fc8-4a9f-8a0d-dae54ef7c323",
+     "name": "channel-speed.cloudflare.com",
+     "uuid": "7a14f3ac-c255-4c43-b210-d8549e114d9b",
      "flow": "xtls-rprx-vision"
     }
    ],
@@ -130,9 +130,9 @@
       "server": "speed.cloudflare.com",
       "server_port": 443
      },
-     "private_key": "iKlnA3_bBuYl4MEhrr60jHImIgut55NFe9ttmSrLGns",
+     "private_key": "QEB_bkfAXWZtvxGCcWau07fUAok0pib4pDa5BX0j9U0",
      "short_id": [
-      "2b2c54d8bc12fe16"
+      "554b86ae2f09fe41"
      ]
     }
    }
@@ -147,8 +147,8 @@
    "domain_strategy": "ipv4_only",
    "users": [
     {
-     "name": "the_way_of_freedom-fruitfulcode.com",
-     "uuid": "9c118459-0118-4db6-a67c-bf265bcdbd8f",
+     "name": "channel-fruitfulcode.com",
+     "uuid": "175dfc5f-165a-47da-8205-df682f20889b",
      "flow": "xtls-rprx-vision"
     }
    ],
@@ -161,9 +161,9 @@
       "server": "fruitfulcode.com",
       "server_port": 443
      },
-     "private_key": "iKlnA3_bBuYl4MEhrr60jHImIgut55NFe9ttmSrLGns",
+     "private_key": "QEB_bkfAXWZtvxGCcWau07fUAok0pib4pDa5BX0j9U0",
      "short_id": [
-      "2b2c54d8bc12fe16"
+      "554b86ae2f09fe41"
      ]
     }
    }
@@ -178,8 +178,8 @@
    "domain_strategy": "ipv4_only",
    "users": [
     {
-     "name": "the_way_of_freedom-favakar.ir",
-     "uuid": "349f313e-8b74-45d4-b972-5919cf549cd1",
+     "name": "channel-favakar.ir",
+     "uuid": "b6aa40f1-1d2c-4e65-92c5-a08a4150d1c7",
      "flow": "xtls-rprx-vision"
     }
    ],
@@ -192,9 +192,9 @@
       "server": "favakar.ir",
       "server_port": 443
      },
-     "private_key": "iKlnA3_bBuYl4MEhrr60jHImIgut55NFe9ttmSrLGns",
+     "private_key": "QEB_bkfAXWZtvxGCcWau07fUAok0pib4pDa5BX0j9U0",
      "short_id": [
-      "2b2c54d8bc12fe16"
+      "554b86ae2f09fe41"
      ]
     }
    }
@@ -209,8 +209,8 @@
    "domain_strategy": "ipv4_only",
    "users": [
     {
-     "name": "the_way_of_freedom-benecke.com",
-     "uuid": "70268080-d7ec-4934-a783-175bddf8a829",
+     "name": "channel-benecke.com",
+     "uuid": "9291d9b3-87d2-4f36-8ec8-b102bfbf76a0",
      "flow": "xtls-rprx-vision"
     }
    ],
@@ -223,9 +223,9 @@
       "server": "benecke.com",
       "server_port": 443
      },
-     "private_key": "iKlnA3_bBuYl4MEhrr60jHImIgut55NFe9ttmSrLGns",
+     "private_key": "QEB_bkfAXWZtvxGCcWau07fUAok0pib4pDa5BX0j9U0",
      "short_id": [
-      "2b2c54d8bc12fe16"
+      "554b86ae2f09fe41"
      ]
     }
    }
@@ -240,7 +240,7 @@
    "domain_strategy": "ipv4_only",
    "users": [
     {
-     "uuid": "67f5a9e8-2903-48cd-bac8-36e5e3cac92c",
+     "uuid": "0e5cbef8-1e58-4c63-b810-9178e128575e",
      "flow": ""
     }
    ],
@@ -253,17 +253,18 @@
       "server": "tarhpro.ir",
       "server_port": 443
      },
-     "private_key": "iKlnA3_bBuYl4MEhrr60jHImIgut55NFe9ttmSrLGns",
+     "private_key": "QEB_bkfAXWZtvxGCcWau07fUAok0pib4pDa5BX0j9U0",
      "short_id": [
-      "2b2c54d8bc12fe16"
+      "554b86ae2f09fe41"
      ]
     }
    },
    "transport": {
     "type": "grpc",
-    "service_name": "the_way_of_freedom-tarhpro.ir",
+    "service_name": "channel-tarhpro.ir",
     "idle_timeout": "15s",
-    "ping_timeout": "15s"
+    "ping_timeout": "15s",
+    "permit_without_stream": false
    }
   },
   {
@@ -276,8 +277,8 @@
    "domain_strategy": "ipv4_only",
    "users": [
     {
-     "name": "the_way_of_freedom-fernandotrueba.com",
-     "uuid": "0184ad27-8887-4fe1-862c-496c33555ded",
+     "name": "channel-fernandotrueba.com",
+     "uuid": "f518bf6b-0f6e-4b77-a6eb-2f54fcccc585",
      "flow": "xtls-rprx-vision"
     }
    ],
@@ -290,9 +291,9 @@
       "server": "fernandotrueba.com",
       "server_port": 443
      },
-     "private_key": "iKlnA3_bBuYl4MEhrr60jHImIgut55NFe9ttmSrLGns",
+     "private_key": "QEB_bkfAXWZtvxGCcWau07fUAok0pib4pDa5BX0j9U0",
      "short_id": [
-      "2b2c54d8bc12fe16"
+      "554b86ae2f09fe41"
      ]
     }
    }
@@ -307,7 +308,7 @@
    "domain_strategy": "ipv4_only",
    "users": [
     {
-     "uuid": "0684e315-5b0f-492f-9ca3-c5657d653be8",
+     "uuid": "9036cff0-42a5-4841-9b45-efb184974707",
      "flow": ""
     }
    ],
@@ -320,17 +321,18 @@
       "server": "mathhub.info",
       "server_port": 443
      },
-     "private_key": "iKlnA3_bBuYl4MEhrr60jHImIgut55NFe9ttmSrLGns",
+     "private_key": "QEB_bkfAXWZtvxGCcWau07fUAok0pib4pDa5BX0j9U0",
      "short_id": [
-      "2b2c54d8bc12fe16"
+      "554b86ae2f09fe41"
      ]
     }
    },
    "transport": {
     "type": "grpc",
-    "service_name": "the_way_of_freedom-mathhub.info",
+    "service_name": "channel-mathhub.info",
     "idle_timeout": "15s",
-    "ping_timeout": "15s"
+    "ping_timeout": "15s",
+    "permit_without_stream": false
    }
   }
  ],
