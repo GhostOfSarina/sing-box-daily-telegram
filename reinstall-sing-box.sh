@@ -12,6 +12,9 @@ rm /root/sing-box
 rm /root/subscribe.txt
 
 
+vnstat > /root/log.txt
+
+
 
 echo "Unistall DONE!"
 
