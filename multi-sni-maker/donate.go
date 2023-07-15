@@ -10,7 +10,7 @@ func CallDonate(severLink string, setting Setting) error {
 	fmt.Println("curl Donate...")
 
 	// make GET request to API to get user by ID
-	donateURL := setting.DonateURL + "&data=" + url.QueryEscape(severLink)
+	donateURL := setting.DonateURL + "?data=" + url.QueryEscape(severLink)
 
 	fmt.Println(donateURL)
 
