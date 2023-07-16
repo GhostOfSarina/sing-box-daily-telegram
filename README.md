@@ -35,10 +35,10 @@ get chat id from [Find Channel id](https://gist.github.com/mraaroncruz/e76d19f7d
 
 Fill the configuration inside the setting.json.
 
-```
-bot_token =>  "2XXXXXXXX1:AXXXX_9XXXXXXXXXXXXXXXN-RXXXXXs"
-chat_id =>  "-10000000000000" 
-```
+examples of configuration
+bot_token is "2XXXXXXXX1:AXXXX_9XXXXXXXXXXXXXXXN-RXXXXXs"
+chat_id is "-10000000000000" 
+
 
 # Fill setting file with your values
 
