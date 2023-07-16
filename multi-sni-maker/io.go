@@ -7,21 +7,7 @@ import (
 	"strings"
 )
 
-func SaveSubscribe(filename string, StringConfigAll string) {
-	f, err := os.Create(filename)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer f.Close()
-
-	_, err2 := f.WriteString(StringConfigAll)
-	if err2 != nil {
-		log.Fatal(err2)
-	}
-
-}
-
-func ReadFile() (currentReality RealityJson) {
+func ReadRealityFile() (currentReality RealityJson) {
 
 	// Let's first read the `reality.json` file
 	content, err := os.ReadFile("./reality.json")
@@ -65,28 +51,4 @@ func getPublicKey() string {
 	publicKey = strings.TrimSpace(publicKey)
 
 	return publicKey
-}
-
-func botToken() string {
-	dat, err := os.ReadFile("./bot_token.txt")
-	if err != nil {
-		log.Fatal("error during the ReadFile")
-	}
-	botToken := string(dat)
-
-	botToken = strings.TrimSpace(botToken)
-
-	return botToken
-}
-
-func chatId() string {
-	dat, err := os.ReadFile("./chat_id.txt")
-	if err != nil {
-		log.Fatal("error during the ReadFile")
-	}
-	chatId := string(dat)
-
-	chatId = strings.TrimSpace(chatId)
-
-	return chatId
 }

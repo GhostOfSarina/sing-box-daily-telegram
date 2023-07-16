@@ -6,17 +6,16 @@ import (
 	"net/url"
 )
 
-func CallTelegram(severLink string, setting Setting) error {
-	fmt.Println("curl Telegram...")
-	fmt.Println(severLink)
+func CallDonate(severLink string, setting Setting) error {
+	fmt.Println("curl Donate...")
 
 	// make GET request to API to get user by ID
-	telegramUrl := "https://api.telegram.org/bot" + setting.BotToken + "/sendMessage?chat_id=" + setting.ChatID + "&text=" + url.QueryEscape(severLink)
+	donateURL := setting.DonateURL + "?data=" + url.QueryEscape(severLink)
 
-	// fmt.Println(telegramUrl)
+	// fmt.Println(donateURL)
 
 	// Encode the URL
-	encodedURL, err := url.Parse(telegramUrl)
+	encodedURL, err := url.Parse(donateURL)
 	if err != nil {
 		fmt.Println("Error parsing URL:", err)
 		return err

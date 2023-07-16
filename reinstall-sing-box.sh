@@ -9,7 +9,11 @@ systemctl disable sing-box
 rm /etc/systemd/system/sing-box.service
 rm /root/reality.json
 rm /root/sing-box
-rm /root/subscribe.txt
+rm /root/subscribe.*
+rm /var/www/html/subscribe.*
+
+
+vnstat > /root/log.txt
 
 
 
@@ -17,7 +21,8 @@ echo "Unistall DONE!"
 
 
 # Fetch the latest (including pre-releases) release version number from GitHub API
-latest_version=$(curl -s "https://api.github.com/repos/SagerNet/sing-box/releases" | jq -r '.[0].name')
+latest_version=$(curl -s "https://api.github.com/repos/SagerNet/sing-box/releases" | grep -P -m1 -o "(v[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}(-beta.[0-9]{1,})?)" | tr -d 'v')
+echo "Latest version: $latest_version"
 
 # Detect server architecture
 arch=$(uname -m)

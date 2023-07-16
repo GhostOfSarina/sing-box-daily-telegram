@@ -3,10 +3,8 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 	"os/exec"
-	"strconv"
-
-	"github.com/google/uuid"
 )
 
 func main() {
@@ -19,69 +17,22 @@ func main() {
 
 	//Read files
 
-	currentReality := ReadFile()
-	currentInbound := currentReality.Inbounds[0]
-
-	var newReality RealityJson
-	newReality.Outbounds = currentReality.Outbounds
-
-	publicKey := getPublicKey()
-
 	serverIP := GetOutboundIP().String()
 
-	StringConfigAll := ""
+	//read configuration from setting file
 
-	ports := []int{443, 22, 23, 3389, 110, 143, 8086, 8087, 8088, 8089, 8090}
-	domains := []string{"www.datadoghq.com",
-		"000webhost.ir",
-		"speedtest.net",
-		"speed.cloudflare.com",
-		"fruitfulcode.com",
-		"favakar.ir",
-		"veket.ir",
-		"benecke.com",
-		"tarhpro.ir",
-		"fernandotrueba.com",
-		"mathhub.info",
+	setting, err := ReadSettingsFile()
+	if err != nil {
+		fmt.Printf("error read settings file %v ", err)
 	}
 
-	if len(ports) != len(domains) {
-		log.Fatal("length ports and domain is not equals")
+	//todo read setting from config
+	var newReality RealityJson
 
-	}
+	//renew existing reality json
+	StringConfigZero, StringConfigAll, newReality := RenewConfigurations(setting, serverIP, newReality)
 
-	newReality.Inbounds = make([]Inbound, len(domains))
-	StringConfigZero := ""
-	for i := 0; i < len(domains); i++ {
-
-		inbound := currentInbound
-		inbound.ListenPort = ports[i]
-		inbound.TLS.ServerName = domains[i]
-		inbound.TLS.Reality.Handshake.Server = domains[i]
-
-		inbound.Users = []User{
-			{
-				NAME: "SB-" + domains[i],
-				UUID: uuid.New().String(),
-				Flow: "xtls-rprx-vision",
-			},
-		}
-
-		newReality.Inbounds[i] = inbound
-
-		StringConfig := "vless://" + inbound.Users[0].UUID + "@" + serverIP + ":" + strconv.Itoa(ports[i]) +
-			"?encryption=none&flow=xtls-rprx-vision&security=reality&sni=" + domains[i] +
-			"&fp=chrome&pbk=" + publicKey + "&sid=" + inbound.TLS.Reality.ShortID[0] + "&type=tcp&headerType=none#SB-" + domains[i]
-
-		if i == 0 {
-			StringConfigZero = StringConfig
-		}
-
-		StringConfigAll += StringConfig + "\n"
-
-	}
-
-	//add bad websites
+	//block bad websites
 	newReality = Block(newReality)
 
 	//save new Reality in file
@@ -90,21 +41,48 @@ func main() {
 		log.Fatal("error during the WriteFile")
 	}
 
-	SaveSubscribe("./subscribe.txt", StringConfigAll)
-
-	_, err = exec.Command("/bin/sh", "./make-subscribe.sh").Output()
-	if err != nil {
-		fmt.Printf("error make-subscribe %s", err)
-	}
-
-	err = CallTelegram(StringConfigZero)
+	//make subscription
+	subscriptionNameLink, err := DoSubscribe(setting, StringConfigAll)
 	if err != nil {
 		fmt.Printf("error %s", err)
 	}
 
-	err = CallTelegram("You can also use this link to subscribe to all configuration:\n" + serverIP + "/subscribe.txt")
-	if err != nil {
-		fmt.Printf("error %s", err)
+	//call Telegram
+	if len(setting.BotToken) > 4 && len(setting.ChatID) > 4 {
+		err = CallTelegram(StringConfigZero, setting)
+		if err != nil {
+			fmt.Printf("error %s", err)
+		}
+
+		err = CallTelegram("You can also use this link to subscribe to all configuration:\nhttp://"+serverIP+"/"+subscriptionNameLink, setting)
+		if err != nil {
+			fmt.Printf("error %s", err)
+		}
+	}
+
+	//call donate endpoint
+
+	if len(setting.DonateURL) > 4 {
+
+		err = CallDonate(StringConfigZero, setting)
+		if err != nil {
+			fmt.Printf("error %s", err)
+		}
+
+	}
+
+	//send vnstat file
+	if setting.SendVNstat {
+
+		logByte, err := os.ReadFile("./log.txt")
+		if err != nil {
+			fmt.Printf("error %s", err)
+		}
+		stringLogByte := string(logByte)
+		err = CallTelegram(stringLogByte, setting)
+		if err != nil {
+			fmt.Printf("error %s", err)
+		}
 	}
 
 }

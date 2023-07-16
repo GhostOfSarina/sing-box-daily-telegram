@@ -1,6 +1,28 @@
 #!/bin/bash
 
 
+
+#easy install
+
+cd /root
+rm -rf /root/reinstall-sing-box.sh*
+rm -rf /root/make-subscribe.sh*
+
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/reinstall-sing-box.sh
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/make-subscribe.sh
+
+sudo chmod +x /root/reinstall-sing-box.sh
+sudo chmod +x /root/make-subscribe.sh
+
+
+rm -rf /root/sing-box-telegram*
+wget https://github.com/GhostOfSarina/sing-box-daily-telegram/releases/download/v.1.3.0/sing-box-telegram
+sudo chmod +x ./sing-box-telegram
+
+
+
+
+
 #instal monitoring
 apt-get update
 apt-get install nload
@@ -11,6 +33,7 @@ apt-get install speedtest-cli
 apt-get install net-tools
 apt-get install -y jq
 
+journalctl --vacuum-size=50M
 
 
 # Check if reality.json, sing-box, and sing-box.service already exist
@@ -36,6 +59,8 @@ if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/
             rm /root/sing-box
             rm /root/subscribe.txt
             rm /root/public_key.txt
+            rm /root/sing-box-telegram
+
 
             # Proceed with installation
             ;;
@@ -49,10 +74,10 @@ if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/
             rm /etc/systemd/system/sing-box.service
             rm /root/reality.json
             rm /root/sing-box
-            rm /root/chat_id.txt
-            rm /root/subscribe.txt
+            rm /root/subscribe.*
+            rm -rf /var/www/hml/subscribe.*
             rm /root/public_key.txt
-            rm /root/bot_token.txt
+            rm /root/sing-box-telegram
 	    echo "DONE!"
             exit 0
             ;;
@@ -66,7 +91,8 @@ fi
 
 
 # Fetch the latest (including pre-releases) release version number from GitHub API
-latest_version=$(curl -s "https://api.github.com/repos/SagerNet/sing-box/releases" | jq -r '.[0].name')
+latest_version=$(curl -s "https://api.github.com/repos/SagerNet/sing-box/releases" | grep -P -m1 -o "(v[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}(-beta.[0-9]{1,})?)" | tr -d 'v')
+echo "Latest version: $latest_version"
 
 # Detect server architecture
 arch=$(uname -m)
