@@ -159,6 +159,18 @@ bash /root/first-time-install-sing-box.sh
 ```
 
 
+# For sending the new configuration to telegram channel. 
+
+Check send the new configuration to telegram channel.
+
+```
+./sing-box-telegram
+```
+
+after command execution the configuration send to your telegram channel.
+
+
+
 # Donate your server to the Yebekhe
 
 You can buy VPS server and donate your server to the Yebekhe. It means that you can share your configuration with other people,And help to other people to have free internet. Finally, you can help Women,Life,Freedom movement.<br />
@@ -206,15 +218,7 @@ put every hour schedule for update the configuration.
 
 
 
-# For sending the new configuration to telegram channel. 
 
-Check send the new configuration to telegram channel.
-
-```
-./sing-box-telegram
-```
-
-after command execution the configuration send to your telegram channel.
 
 
 ##  << Other options ( professional edit project) >>
