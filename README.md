@@ -85,48 +85,6 @@ echo "{
 
 You can also edit your file with nano editor. [youtube nano](https://www.youtube.com/watch?v=fJTPjWuyrIY) [youtube nano 2](https://www.youtube.com/watch?v=NV9PyPJKqH4) <br />
 
-# Donate your server to the Yebekhe
-
-You can also send your automatically to the  yebekhe server or what URL you wants. just fill `donate_url` with your desirable address.<br />
-My sister-in-law project is [Yebekhe](https://github.com/yebekhe/TelegramV2rayCollector)<br />
-
-Don't need to have telegram channel. <br />
-Don't need to have telegram bot.<br />
-
-
-```
-cd /root
-touch /root/setting.json
-echo "{
-    \"ports\": [443, 22, 10050],
-    \"domains\": [
-        \"www.datadoghq.com\",
-        \"000webhost.ir\",
-        \"speedtest.net\"
-    ],
-    \"bot_token\" : \"\",
-    \"chat_id\" : \"\",
-    \"donate_url\" : \"https://yebekhe.000webhostapp.com/donate/\",
-    \"dynamic_subscription\" : false,
-    \"channel_name\" : \"Sarina\",
-    \"send_vnstat\" : false
-}">  /root/setting.json
-```
-
-After install that explain in below section. you can change scheduler time in the cronjob.
-```
-wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/first-time-install-sing-box.sh
-
-```
-
-for edit cronjob use these command:
-```crontab -e```
-
-
-put every hour schedule for update the configuration. 
-```0 * * * *```
-
-
 
 # How to install
 For fast way install and run this service you need download below files and execute them. 
@@ -162,6 +120,54 @@ sudo chmod +x /root/first-time-install-sing-box.sh
 
 bash /root/first-time-install-sing-box.sh
 ```
+
+
+# Donate your server to the Yebekhe
+
+You can buy 2 dollar VPS and donate your server to the Yebekhe. It means that you can share your configuration with other people.
+And help to other people to have free internet. Also you can help Women,Life,Freedom movement.<br />
+You can also send your automatically to the  yebekhe server or what URL you wants. just fill `donate_url` with your desirable address.<br />
+My sister-in-law project is [Yebekhe](https://github.com/yebekhe/TelegramV2rayCollector)<br />
+
+Don't need to have telegram channel. <br />
+Don't need to have telegram bot.<br />
+
+
+```
+cd /root
+touch /root/setting.json
+echo "{
+    \"ports\": [443, 22, 10050],
+    \"domains\": [
+        \"www.datadoghq.com\",
+        \"000webhost.ir\",
+        \"speedtest.net\"
+    ],
+    \"bot_token\" : \"\",
+    \"chat_id\" : \"\",
+    \"donate_url\" : \"https://yebekhe.000webhostapp.com/donate/\",
+    \"dynamic_subscription\" : false,
+    \"channel_name\" : \"Sarina\",
+    \"send_vnstat\" : false
+}">  /root/setting.json
+```
+
+After install that explain in upper section. you can change scheduler time in the cronjob.
+```
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/first-time-install-sing-box.sh
+
+```
+
+for edit cronjob use these command:
+```crontab -e```
+
+
+put every hour schedule for update the configuration. 
+```0 * * * *```
+
+
+
+
 
 
 # For sending the new configuration to telegram channel. 
