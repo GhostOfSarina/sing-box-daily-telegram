@@ -75,7 +75,7 @@ echo "{
     ],
     \"bot_token\" : \"627434621931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
     \"chat_id\" : \"-1002343276432\",
-    \"donate_url\" : \"https://where_ever_you_want.site",
+    \"donate_url\" : \"https://where_ever_you_want.site\",
     \"dynamic_subscription\" : true,
     \"channel_name\" : \"Sarina_Esmailzadeh\",
     \"send_vnstat\" : true
