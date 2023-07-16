@@ -125,6 +125,7 @@ You have to see below result. <br />
 
 If you don't see setting.json file, you can create it with below command line. <br />
 ```
+rm -rf /root/setting*
 wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/develop/setting.json
 nano setting.json
 ```
