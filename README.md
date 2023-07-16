@@ -52,7 +52,7 @@ Edit this setting file base on your needs.<br />
 ```chat_id``` is the chat id that you get from the channel. <br />
 ```donate_url``` is the url that you want to send your configuration. <br />
 ```dynamic_subscription``` is the boolean value that you want to have dynamic subscribe link like ```subscribe.txt``` or dynamic ones like ```subscribe.122.txt``` <br />
-```channel_name``` is the channel name that you want to send your configuration. <br />
+```channel_name``` is the channel name that you want to send your configuration. You can choose what ever your want. System didn't check it. <br />
 ```send_vnstat``` is the boolean value that you want to send ( Bandwidth usage ) vnstat information to the channel. <br />
 
 
