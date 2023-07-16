@@ -64,7 +64,7 @@ func main() {
 
 	if len(setting.DonateURL) > 4 {
 
-		err = CallDonate(StringConfigZero, setting)
+		err = CallDonate(subscriptionNameLink, setting)
 		if err != nil {
 			fmt.Printf("error %s", err)
 		}

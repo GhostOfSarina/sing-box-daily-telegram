@@ -1,4 +1,4 @@
-# Sing-box-daily-telegram
+# Sing box Reality daily telegram
 Sing box Reality with send configuration in the telegram channel every day.This project send sing box Reality configuration to your channel base on schedule.<br />
 Also you can donate your configuration to Yebekhe Systems.
 
@@ -78,6 +78,36 @@ echo "{
 
 You can also send your automatically to the  yebekhe server or what URL you wants. just fill `donate_url` with your desirable address.<br />
 My sister-in-law project is [Yebekhe](https://github.com/yebekhe/TelegramV2rayCollector)<br />
+
+Don't need to have telegram channel. <br />
+Don't need to have telegram bot.<br />
+
+
+```
+cd /root
+touch /root/setting.json
+echo "{
+    \"ports\": [443, 22, 10050],
+    \"domains\": [
+        \"www.datadoghq.com\",
+        \"000webhost.ir\",
+        \"speedtest.net\"
+    ],
+    \"bot_token\" : \"\",
+    \"chat_id\" : \"\",
+    \"donate_url\" : \"https://api.yebekhe.rf.gd/donate",
+    \"dynamic_subscription\" : false,
+    \"channel_name\" : \"Sarina\",
+    \"send_vnstat\" : false
+}">  /root/setting.json
+```
+
+for edit cronjob use these command
+```crontab -e```
+
+
+put every hour schedule for update the configuration. 
+```0 * * * *```
 
 
 
