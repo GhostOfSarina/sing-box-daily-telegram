@@ -78,6 +78,11 @@ if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/
             rm -rf /var/www/hml/subscribe.*
             rm /root/public_key.txt
             rm /root/sing-box-telegram
+            rm /root/first-time-install-sing-box.sh
+            rm /root/reinstall-sing-box.sh
+            rm /root/make-subscribe.sh
+
+
 	    echo "DONE!"
             exit 0
             ;;
