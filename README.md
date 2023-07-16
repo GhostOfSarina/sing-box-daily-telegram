@@ -83,10 +83,7 @@ echo "{
 ```
 
 
-You can also edit your file with nano editor. <br />
-[ How To Make and Edit Files With Nano ](https://www.youtube.com/watch?v=fJTPjWuyrIY) <br />
-[nano for Text Editing in Ubuntu](https://www.youtube.com/watch?v=NV9PyPJKqH4) <br />
-[ Learn JSON in 10 Minutes ](https://www.youtube.com/watch?v=iiADhChRriM) <br />
+
 
 
 # Check the setting.json 
@@ -124,6 +121,11 @@ You have to see below result. <br />
 
 
 If you don't see setting.json file, you can create it with below command line. <br />
+You can also edit your file with nano editor. <br />
+[ How To Make and Edit Files With Nano ](https://www.youtube.com/watch?v=fJTPjWuyrIY) <br />
+[ Nano for Text Editing in Ubuntu](https://www.youtube.com/watch?v=NV9PyPJKqH4) <br />
+[ Learn JSON in 10 Minutes ](https://www.youtube.com/watch?v=iiADhChRriM) <br />
+
 ```
 rm -rf /root/setting*
 wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/develop/setting.json
