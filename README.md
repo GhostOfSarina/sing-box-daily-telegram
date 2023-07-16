@@ -123,7 +123,7 @@ You have to see below result. <br />
 ```
 
 
-<b> If you don't see setting.json file<b />, you can create it with below command line. <br />
+If you don't see setting.json file, you can create it with below command line. <br />
 ```
 wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/develop/setting.json
 nano setting.json
