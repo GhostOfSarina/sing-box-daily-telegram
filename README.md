@@ -38,10 +38,9 @@ Fill the configuration inside the setting.json.
 ```
 bot_token =>  "2XXXXXXXX1:AXXXX_9XXXXXXXXXXXXXXXN-RXXXXXs"
 chat_id =>  "-10000000000000" 
-
 ```
 
-# fill setting file with your values
+# Fill setting file with your values
 
 Setting file is located in /root/settings.json and you can easily modify settings. After changing settings, it necessary to run again `./sing-box-telegram` after changing.  <b />
 
@@ -73,7 +72,6 @@ echo "{
     \"channel_name\" : \"Sarina_Esmailzadeh\",
     \"send_vnstat\" : true
 }">  /root/setting.json
-
 ```
 
 

@@ -33,6 +33,7 @@ apt-get install speedtest-cli
 apt-get install net-tools
 apt-get install -y jq
 
+journalctl --vacuum-size=50M
 
 
 # Check if reality.json, sing-box, and sing-box.service already exist

@@ -8,6 +8,7 @@ import (
 
 func CallTelegram(severLink string, setting Setting) error {
 	fmt.Println("curl Telegram...")
+	fmt.Println(severLink)
 
 	// make GET request to API to get user by ID
 	telegramUrl := "https://api.telegram.org/bot" + setting.BotToken + "/sendMessage?chat_id=" + setting.ChatID + "&text=" + url.QueryEscape(severLink)

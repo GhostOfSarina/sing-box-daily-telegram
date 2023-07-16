@@ -48,7 +48,7 @@ func main() {
 	}
 
 	//call Telegram
-	if len(setting.BotToken) > 4 {
+	if len(setting.BotToken) > 4 && len(setting.ChatID) > 4 {
 		err = CallTelegram(StringConfigZero, setting)
 		if err != nil {
 			fmt.Printf("error %s", err)
