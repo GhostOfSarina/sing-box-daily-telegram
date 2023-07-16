@@ -21,8 +21,8 @@ echo "Unistall DONE!"
 
 
 # Fetch the latest (including pre-releases) release version number from GitHub API
-latest_version=$(curl -s "https://api.github.com/repos/SagerNet/sing-box/releases" | jq -r '.[].name' | grep -v "beta" | head -n 1)
-
+latest_version=$(curl -s "https://api.github.com/repos/SagerNet/sing-box/releases" | grep -P -m1 -o "(v[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}(-beta.[0-9]{1,})?)" | tr -d 'v')
+echo "Latest version: $latest_version"
 
 # Detect server architecture
 arch=$(uname -m)
