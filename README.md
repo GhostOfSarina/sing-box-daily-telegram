@@ -83,7 +83,44 @@ echo "{
 ```
 
 
-You can also edit your file with nano editor. [youtube nano](https://www.youtube.com/watch?v=fJTPjWuyrIY) [youtube nano 2](https://www.youtube.com/watch?v=NV9PyPJKqH4) <br />
+You can also edit your file with nano editor. <br />
+[ How To Make and Edit Files With Nano ](https://www.youtube.com/watch?v=fJTPjWuyrIY) <br />
+[nano for Text Editing in Ubuntu](https://www.youtube.com/watch?v=NV9PyPJKqH4) <br />
+[ Learn JSON in 10 Minutes ](https://www.youtube.com/watch?v=iiADhChRriM) <br />
+
+
+# Check the setting.json 
+
+For check your json file you can use below command line. <br />
+
+```cat /root/setting.json```
+
+
+You have to see below result. <br />
+```
+{
+   "ports": [443, 22, 2087, 8880, 10050, 2053, 2082, 8443, 6443, 2096 ],
+   "domains": [
+       "www.datadoghq.com",
+       "000webhost.ir",
+       "speedtest.net",
+       "speed.cloudflare.com",
+       "fruitfulcode.com",
+       "favakar.ir",
+       "benecke.com",
+       "tarhpro.ir",
+       "fernandotrueba.com",
+       "mathhub.info"
+   ],
+   "bot_token" : "627444321931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b",
+   "chat_id" : "-1003342276432",
+   "donate_url" : "",
+   "dynamic_subscription" : false,
+   "channel_name" : "Sarina_Esmailzadeh",
+   "send_vnstat" : true
+}
+
+```
 
 
 # How to install
