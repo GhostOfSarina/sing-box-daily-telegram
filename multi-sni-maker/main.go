@@ -64,10 +64,9 @@ func main() {
 
 	if len(setting.DonateURL) > 4 {
 
-		err = CallDonate(subscriptionNameLink, setting)
-		if err != nil {
-			fmt.Printf("error %s", err)
-		}
+		subscriptionNameLinkFull := "http://" + serverIP + "/" + subscriptionNameLink
+
+		go CallDonate(subscriptionNameLinkFull, setting)
 
 	}
 

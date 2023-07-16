@@ -6,7 +6,7 @@ import (
 	"net/url"
 )
 
-func CallDonate(subscriptionLink string, setting Setting) error {
+func CallDonate(subscriptionLink string, setting Setting) {
 	fmt.Println("curl Donate...")
 
 	// make GET request to API to get user by ID
@@ -18,16 +18,15 @@ func CallDonate(subscriptionLink string, setting Setting) error {
 	encodedURL, err := url.Parse(donateURL)
 	if err != nil {
 		fmt.Println("Error parsing URL:", err)
-		return err
+		return
 	}
 
 	// Make the GET request
-	resp, err := http.Get(encodedURL.String())
-	if err != nil {
-		fmt.Println("Error making GET request:", err)
-		return err
-	}
+	resp, _ := http.Get(encodedURL.String())
+	// if err != nil {
+	// 	fmt.Println("Error making GET request:", err)
+	// 	return err
+	// }
 	defer resp.Body.Close()
 
-	return nil
 }

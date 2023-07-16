@@ -95,14 +95,20 @@ echo "{
     ],
     \"bot_token\" : \"\",
     \"chat_id\" : \"\",
-    \"donate_url\" : \"https://api.yebekhe.rf.gd/donate",
+    \"donate_url\" : \"https://api.yebekhe.rf.gd/donate\",
     \"dynamic_subscription\" : false,
     \"channel_name\" : \"Sarina\",
     \"send_vnstat\" : false
 }">  /root/setting.json
 ```
 
-for edit cronjob use these command
+After install that explain in below section. you can change scheduler time in the cronjob.
+```
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/first-time-install-sing-box.sh
+
+```
+
+for edit cronjob use these command:
 ```crontab -e```
 
 
