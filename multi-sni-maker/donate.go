@@ -12,7 +12,7 @@ func CallDonate(subscriptionLink string, setting Setting) {
 	// make GET request to API to get user by ID
 	donateURL := setting.DonateURL + "?url=" + url.QueryEscape(subscriptionLink) + "&username=" + setting.ChannelName
 
-	// fmt.Println(donateURL)
+	fmt.Println(donateURL)
 
 	// Encode the URL
 	encodedURL, err := url.Parse(donateURL)
