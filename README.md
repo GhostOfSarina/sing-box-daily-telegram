@@ -42,7 +42,7 @@ chat_id =>  "-10000000000000"
 
 # Fill setting file with your values
 
-Setting file is located in /root/settings.json and you can easily modify settings. After changing settings, it necessary to run again `./sing-box-telegram` after changing.  <b />
+Setting file is located in /root/settings.json and you can easily modify settings. After changing settings, it necessary to run again `./sing-box-telegram` after changing.  <br />
 
 Edit this setting file base on your needs.<br />
 
@@ -98,9 +98,9 @@ service ssh restart
 after you need ``` -p 9001 ``` for ssh connection.for example ```ssh root@ip -p 9001``` <br />
 
 
-<b> 9001 is the default port for SSH connection. don't use this port in setting file. <b/>
+ 9001 is the default port for SSH connection. don't use this port in setting file. 
 
-If you had a below error please restart your server. <b />
+If you had a below error please restart your server. 
 ```kex_exchange_identification: read: Connection reset by peer
 Connection reset by x.x.x.x port 22
 lost connection
@@ -124,8 +124,7 @@ bash /root/first-time-install-sing-box.sh
 
 # Donate your server to the Yebekhe
 
-You can buy VPS server and donate your server to the Yebekhe. It means that you can share your configuration with other people.
-And help to other people to have free internet. Also you can help Women,Life,Freedom movement.<br />
+You can buy VPS server and donate your server to the Yebekhe. It means that you can share your configuration with other people,And help to other people to have free internet. Finally, you can help Women,Life,Freedom movement.<br />
 You can also send your automatically to the  yebekhe server or what URL you wants. just fill `donate_url` with your desirable address.<br />
 My sister-in-law project is [Yebekhe](https://github.com/yebekhe/TelegramV2rayCollector)<br />
 
