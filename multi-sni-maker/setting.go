@@ -36,7 +36,7 @@ func ReadSettingsFile() (setting Setting, err error) {
 
 	}
 
-	if len(setting.Ports) != len(setting.Domains) || len(setting.GRPC) != len(setting.Ports) {
+	if len(setting.Ports) != len(setting.Domains) { //|| len(setting.GRPC) != len(setting.Ports)
 		log.Fatal("length ports and domain is not equals")
 		return setting, fmt.Errorf("length ports and domain")
 	}

@@ -64,7 +64,6 @@ echo "{
         \"fernandotrueba.com\",
         \"mathhub.info\"
     ],
-    \"grpc\" : [ false ,  false , false , false , false , false , false , true , false , true ],
     \"bot_token\" : \"627434621931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
     \"chat_id\" : \"-1002343276432\",
     \"donate_url\" : \"https://where_ever_you_want.site",

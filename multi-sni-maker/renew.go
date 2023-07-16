@@ -35,18 +35,19 @@ func RenewConfigurations(setting Setting, serverIP string, newReality RealityJso
 
 		newReality.Inbounds[counter] = inbound
 
-		if setting.GRPC[counter] {
+		//GRPC setting
+		// if setting.GRPC[counter] {
 
-			inbound.Users[0].Flow = ""
-			inbound.Users[0].Name = ""
+		// 	inbound.Users[0].Flow = ""
+		// 	inbound.Users[0].Name = ""
 
-			newReality.Inbounds[counter].Transport = new(Transport)
-			newReality.Inbounds[counter].Transport.Type = "grpc"
-			newReality.Inbounds[counter].Transport.ServiceName = name
-			newReality.Inbounds[counter].Transport.IdleTimeout = "15s"
-			newReality.Inbounds[counter].Transport.PingTimeout = "15s"
-			newReality.Inbounds[counter].Transport.PermitWithoutStream = false
-		}
+		// 	newReality.Inbounds[counter].Transport = new(Transport)
+		// 	newReality.Inbounds[counter].Transport.Type = "grpc"
+		// 	newReality.Inbounds[counter].Transport.ServiceName = name
+		// 	newReality.Inbounds[counter].Transport.IdleTimeout = "15s"
+		// 	newReality.Inbounds[counter].Transport.PingTimeout = "15s"
+		// 	newReality.Inbounds[counter].Transport.PermitWithoutStream = false
+		// }
 
 		//capture setting
 
