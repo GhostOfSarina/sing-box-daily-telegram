@@ -44,7 +44,16 @@ chat_id =>  "-10000000000000"
 
 Setting file is located in /root/settings.json and you can easily modify settings. After changing settings, it necessary to run again `./sing-box-telegram` after changing.  <b />
 
-Edit this setting file base on your needs.
+Edit this setting file base on your needs.<br />
+
+```ports``` are the ports that you want to use in your server. <br />
+```domains``` are the domains that you want to use in your SNI. <br />
+```bot_token``` is the bot token that you get from the bot father. <br />
+```chat_id``` is the chat id that you get from the channel. <br />
+```donate_url``` is the url that you want to send your configuration. <br />
+```dynamic_subscription``` is the boolean value that you want to have dynamic subscribe link like ```subscribe.txt``` or dynamic ones like ```subscribe.122.txt``` <br />
+```channel_name``` is the channel name that you want to send your configuration. <br />
+```send_vnstat``` is the boolean value that you want to send ( Bandwidth usage ) vnstat information to the channel. <br />
 
 
 ```
@@ -73,6 +82,8 @@ echo "{
 }">  /root/setting.json
 ```
 
+
+You can also edit your file with nano editor. [youtube nano](https://www.youtube.com/watch?v=fJTPjWuyrIY) [youtube nano 2](https://www.youtube.com/watch?v=NV9PyPJKqH4) <br />
 
 # Donate your server to the Yebekhe
 
