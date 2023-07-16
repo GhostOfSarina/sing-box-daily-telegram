@@ -95,7 +95,7 @@ echo "{
     ],
     \"bot_token\" : \"\",
     \"chat_id\" : \"\",
-    \"donate_url\" : \"http://api.yebekhe.rf.gd/donate\",
+    \"donate_url\" : \"https://yebekhe.000webhostapp.com/donate/\",
     \"dynamic_subscription\" : false,
     \"channel_name\" : \"Sarina\",
     \"send_vnstat\" : false
