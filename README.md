@@ -124,7 +124,7 @@ bash /root/first-time-install-sing-box.sh
 
 # Donate your server to the Yebekhe
 
-You can buy 2 dollar VPS and donate your server to the Yebekhe. It means that you can share your configuration with other people.
+You can buy VPS server and donate your server to the Yebekhe. It means that you can share your configuration with other people.
 And help to other people to have free internet. Also you can help Women,Life,Freedom movement.<br />
 You can also send your automatically to the  yebekhe server or what URL you wants. just fill `donate_url` with your desirable address.<br />
 My sister-in-law project is [Yebekhe](https://github.com/yebekhe/TelegramV2rayCollector)<br />
