@@ -123,6 +123,16 @@ You have to see below result. <br />
 ```
 
 
+<b> If you don't see setting.json file<b />, you can create it with below command line. <br />
+```
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/develop/setting.json
+nano setting.json
+```
+And then modify your json file. <br />
+
+
+
+
 # How to install
 For fast way install and run this service you need download below files and execute them. 
 For security reason, I recommend you to change ssh port. change 9001 to any port that you want.

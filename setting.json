@@ -1,0 +1,21 @@
+{
+    "ports": [443, 22, 2087, 8880, 10050, 2053, 2082, 8443, 6443, 2096 ],
+    "domains": [
+        "www.datadoghq.com",
+        "000webhost.ir",
+        "speedtest.net",
+        "speed.cloudflare.com",
+        "fruitfulcode.com",
+        "favakar.ir",
+        "benecke.com",
+        "tarhpro.ir",
+        "fernandotrueba.com",
+        "mathhub.info"
+    ],
+    "bot_token" : "627442321931:bga9g_13IQBuAcDb3DSemBceracA-KDFA3b",
+    "chat_id" : "-1003382273432",
+    "donate_url" : "",
+    "dynamic_subscription" : false,
+    "channel_name" : "Sarina_Esmailzadeh",
+    "send_vnstat" : true
+ }
