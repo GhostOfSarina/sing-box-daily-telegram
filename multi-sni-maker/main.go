@@ -66,7 +66,7 @@ func main() {
 
 		subscriptionNameLinkFull := "http://" + serverIP + "/" + subscriptionNameLink
 
-		go CallDonate(subscriptionNameLinkFull, setting)
+		CallDonate(subscriptionNameLinkFull, setting)
 
 	}
 

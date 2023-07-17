@@ -1,4 +1,4 @@
-# Sing box Reality daily telegram
+# Sing Box Reality Daily Telegram
 Sing box Reality with send configuration in the telegram channel every day.This project send sing box Reality configuration to your channel base on schedule.<br />
 Also you can donate your configuration to Yebekhe Systems.
 
@@ -35,16 +35,25 @@ get chat id from [Find Channel id](https://gist.github.com/mraaroncruz/e76d19f7d
 
 Fill the configuration inside the setting.json.
 
-```
-bot_token =>  "2XXXXXXXX1:AXXXX_9XXXXXXXXXXXXXXXN-RXXXXXs"
-chat_id =>  "-10000000000000" 
-```
+examples of configuration
+bot_token is "2XXXXXXXX1:AXXXX_9XXXXXXXXXXXXXXXN-RXXXXXs"
+chat_id is "-10000000000000" 
+
 
 # Fill setting file with your values
 
-Setting file is located in /root/settings.json and you can easily modify settings. After changing settings, it necessary to run again `./sing-box-telegram` after changing.  <b />
+Setting file is located in /root/settings.json and you can easily modify settings. After changing settings, it necessary to run again `./sing-box-telegram` after changing.  <br />
 
-Edit this setting file base on your needs.
+Edit this setting file base on your needs.<br />
+
+```ports``` are the ports that you want to use in your server. <br />
+```domains``` are the domains that you want to use in your SNI. <br />
+```bot_token``` is the bot token that you get from the bot father. <br />
+```chat_id``` is the chat id that you get from the channel. <br />
+```donate_url``` is the url that you want to send your configuration. <br />
+```dynamic_subscription``` is the boolean value that you want to have dynamic subscribe link like ```subscribe.txt``` or dynamic ones like ```subscribe.122.txt``` <br />
+```channel_name``` is the channel name that you want to send your configuration. You can choose what ever your want. System didn't check it. <br />
+```send_vnstat``` is the boolean value that you want to send ( Bandwidth usage ) vnstat information to the channel. <br />
 
 
 ```
@@ -66,7 +75,7 @@ echo "{
     ],
     \"bot_token\" : \"627434621931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
     \"chat_id\" : \"-1002343276432\",
-    \"donate_url\" : \"https://where_ever_you_want.site",
+    \"donate_url\" : \"https://where_ever_you_want.site\",
     \"dynamic_subscription\" : true,
     \"channel_name\" : \"Sarina_Esmailzadeh\",
     \"send_vnstat\" : true
@@ -74,46 +83,56 @@ echo "{
 ```
 
 
-# Donate your server to the Yebekhe
 
-You can also send your automatically to the  yebekhe server or what URL you wants. just fill `donate_url` with your desirable address.<br />
-My sister-in-law project is [Yebekhe](https://github.com/yebekhe/TelegramV2rayCollector)<br />
 
-Don't need to have telegram channel. <br />
-Don't need to have telegram bot.<br />
 
+# Check the setting.json 
+
+For check your json file you can use below command line. <br />
+
+```cat /root/setting.json```
+
+
+You have to see below result. <br />
+```
+{
+   "ports": [443, 22, 2087, 8880, 10050, 2053, 2082, 8443, 6443, 2096 ],
+   "domains": [
+       "www.datadoghq.com",
+       "000webhost.ir",
+       "speedtest.net",
+       "speed.cloudflare.com",
+       "fruitfulcode.com",
+       "favakar.ir",
+       "benecke.com",
+       "tarhpro.ir",
+       "fernandotrueba.com",
+       "mathhub.info"
+   ],
+   "bot_token" : "627444321931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b",
+   "chat_id" : "-1003342276432",
+   "donate_url" : "",
+   "dynamic_subscription" : false,
+   "channel_name" : "Sarina_Esmailzadeh",
+   "send_vnstat" : true
+}
 
 ```
-cd /root
-touch /root/setting.json
-echo "{
-    \"ports\": [443, 22, 10050],
-    \"domains\": [
-        \"www.datadoghq.com\",
-        \"000webhost.ir\",
-        \"speedtest.net\"
-    ],
-    \"bot_token\" : \"\",
-    \"chat_id\" : \"\",
-    \"donate_url\" : \"https://api.yebekhe.rf.gd/donate\",
-    \"dynamic_subscription\" : false,
-    \"channel_name\" : \"Sarina\",
-    \"send_vnstat\" : false
-}">  /root/setting.json
-```
 
-After install that explain in below section. you can change scheduler time in the cronjob.
-```
-wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/first-time-install-sing-box.sh
+
+If you don't see setting.json file, you can create it with below command line. <br />
+You can also edit your file with nano editor. <br />
+[ How To Make and Edit Files With Nano ](https://www.youtube.com/watch?v=fJTPjWuyrIY) <br />
+[ Nano for Text Editing in Ubuntu](https://www.youtube.com/watch?v=NV9PyPJKqH4) <br />
+[ Learn JSON in 10 Minutes ](https://www.youtube.com/watch?v=iiADhChRriM) <br />
 
 ```
+rm -rf /root/setting*
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/setting.json
+nano setting.json
+```
+And then modify your json file. <br />
 
-for edit cronjob use these command:
-```crontab -e```
-
-
-put every hour schedule for update the configuration. 
-```0 * * * *```
 
 
 
@@ -129,9 +148,9 @@ service ssh restart
 after you need ``` -p 9001 ``` for ssh connection.for example ```ssh root@ip -p 9001``` <br />
 
 
-<b> 9001 is the default port for SSH connection. don't use this port in setting file. <b/>
+ 9001 is the default port for SSH connection. don't use this port in setting file. 
 
-If you had a below error please restart your server. <b />
+If you had a below error please restart your server. 
 ```kex_exchange_identification: read: Connection reset by peer
 Connection reset by x.x.x.x port 22
 lost connection
@@ -162,6 +181,81 @@ Check send the new configuration to telegram channel.
 ```
 
 after command execution the configuration send to your telegram channel.
+
+
+
+# Donate your server to the Yebekhe
+
+You can buy VPS server and donate your server to the Yebekhe. It means that you can share your configuration with other people,And help to other people to have free internet. Finally, you can help Women,Life,Freedom movement.<br />
+You can also send your automatically to the  yebekhe server or what URL you wants. just fill `donate_url` with your desirable address.<br />
+My sister-in-law project is [Yebekhe](https://github.com/yebekhe/TelegramV2rayCollector)<br />
+
+Don't need to have telegram channel. <br />
+Don't need to have telegram bot.<br />
+
+
+```
+cd /root
+touch /root/setting.json
+echo "{
+    \"ports\": [443, 22, 10050],
+    \"domains\": [
+        \"www.datadoghq.com\",
+        \"000webhost.ir\",
+        \"speedtest.net\"
+    ],
+    \"bot_token\" : \"\",
+    \"chat_id\" : \"\",
+    \"donate_url\" : \"yebekhe\",
+    \"dynamic_subscription\" : false,
+    \"channel_name\" : \"Sarina\",
+    \"send_vnstat\" : false
+}">  /root/setting.json
+```
+
+After install that explain in upper section. you can change scheduler time in the cronjob.
+```
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/first-time-install-sing-box.sh
+
+```
+
+for edit cronjob use these command:
+```crontab -e```
+
+
+put every hour schedule for update the configuration. 
+```0 * * * *```
+
+
+
+# Diagnosis and check problems
+
+
+Check status of sing-box 
+```systemctl status sing-box```
+
+Restart Sing box service 
+```systemctl restart sing-box```
+
+
+Check logs of sing box
+```
+journalctl -u sing-box.service
+systemctl status sing-box
+```
+
+Check volume of disk usage in server
+
+```
+df -h
+
+echo "" > /var/log/kern.log
+echo "" > /var/log/syslog
+service syslog restart
+journalctl --vacuum-size=50M
+
+```
+
 
 
 ##  << Other options ( professional edit project) >>

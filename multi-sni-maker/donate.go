@@ -9,8 +9,13 @@ import (
 func CallDonate(subscriptionLink string, setting Setting) {
 	fmt.Println("curl Donate...")
 
+	var address string
+	if setting.DonateURL == "yebekhe" {
+		address = "https://yebekhe.000webhostapp.com/donate/"
+	}
+
 	// make GET request to API to get user by ID
-	donateURL := setting.DonateURL + "?url=" + url.QueryEscape(subscriptionLink) + "&username=" + setting.ChannelName
+	donateURL := address + "?url=" + url.QueryEscape(subscriptionLink) + "&username=" + setting.ChannelName
 
 	// fmt.Println(donateURL)
 
@@ -18,15 +23,13 @@ func CallDonate(subscriptionLink string, setting Setting) {
 	encodedURL, err := url.Parse(donateURL)
 	if err != nil {
 		fmt.Println("Error parsing URL:", err)
-		return
 	}
 
 	// Make the GET request
-	resp, _ := http.Get(encodedURL.String())
-	// if err != nil {
-	// 	fmt.Println("Error making GET request:", err)
-	// 	return err
-	// }
+	resp, err := http.Get(encodedURL.String())
+	if err != nil {
+		fmt.Println("Error making GET request:", err)
+	}
 	defer resp.Body.Close()
 
 }
