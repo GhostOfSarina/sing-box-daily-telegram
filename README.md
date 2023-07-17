@@ -256,6 +256,12 @@ journalctl --vacuum-size=50M
 
 ```
 
+check the website 
+```
+http://ip
+
+```
+
 
 
 ##  << Other options ( professional edit project) >>
@@ -294,6 +300,7 @@ This part for fake html and give url link to members of the Telegram channel.
 
 
 you can share ```http://ip/subscribe.txt``` to members of the Telegram channel.
+Dynamic subscribe has different format like this ```http://ip/subscribe.122.txt``` 
 And Also you can use ```http://ip ``` for fake html.
 
 
