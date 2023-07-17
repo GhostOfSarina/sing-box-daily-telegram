@@ -128,7 +128,7 @@ You can also edit your file with nano editor. <br />
 
 ```
 rm -rf /root/setting*
-wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/develop/setting.json
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/setting.json
 nano setting.json
 ```
 And then modify your json file. <br />
