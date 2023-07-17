@@ -206,7 +206,7 @@ echo "{
     ],
     \"bot_token\" : \"\",
     \"chat_id\" : \"\",
-    \"donate_url\" : \"https://yebekhe.000webhostapp.com/donate/\",
+    \"donate_url\" : \"yebekhe\",
     \"dynamic_subscription\" : false,
     \"channel_name\" : \"Sarina\",
     \"send_vnstat\" : false
@@ -228,9 +228,33 @@ put every hour schedule for update the configuration.
 
 
 
+# Diagnosis and check problems
 
 
+Check status of sing-box 
+```systemctl status sing-box```
 
+Restart Sing box service 
+```systemctl restart sing-box```
+
+
+Check logs of sing box
+```
+journalctl -u sing-box.service
+systemctl status sing-box
+```
+
+Check volume of disk usage in server
+
+```
+df -h
+
+echo "" > /var/log/kern.log
+echo "" > /var/log/syslog
+service syslog restart
+journalctl --vacuum-size=50M
+
+```
 
 
 
