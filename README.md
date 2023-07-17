@@ -269,7 +269,17 @@ sudo ufw status
 [Linux Security - UFW Complete Guide](https://www.youtube.com/watch?v=-CzvPjZ9hp8)
 
 
+# Uninstall sing-box
 
+for uninstall sing-box use below command line:
+```
+bash /root/first-time-install-sing-box.sh
+    
+>>> choose 2. Uninstall
+
+rm /root/setting.json
+
+```
 
 
 

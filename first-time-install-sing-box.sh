@@ -82,6 +82,8 @@ if [ -f "/root/reality.json" ] && [ -f "/root/sing-box" ] && [ -f "/etc/systemd/
             rm /root/reinstall-sing-box.sh
             rm /root/make-subscribe.sh
 
+            echo "if you want to delete setting.json, please run rm /root/setting.json"
+
 
 	    echo "DONE!"
             exit 0
