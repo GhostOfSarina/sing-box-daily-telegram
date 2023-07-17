@@ -262,6 +262,15 @@ http://ip
 
 ```
 
+If you had firewall on your server, you need to open the port that you want to use. 
+```
+sudo ufw status
+```
+[Linux Security - UFW Complete Guide](https://www.youtube.com/watch?v=-CzvPjZ9hp8)
+
+
+
+
 
 
 ##  << Other options ( professional edit project) >>
