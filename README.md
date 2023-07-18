@@ -279,6 +279,16 @@ If vnstat didn't work properly, you need to reset the database.
 vnstat -D
 ```
 
+Or My solution was to remove the folder it uses to store its data (/var/lib/vnstat) and create a new empty directory instead. You may need to run vnstatd manually once to create the database after that:
+
+```
+vnstatd -n -s
+```
+Apart from that, I also needed to apply 
+```
+sudo chown -R vnstat:vnstat /var/lib/vnstat
+```
+
 # Uninstall sing-box
 
 for uninstall sing-box use below command line:
