@@ -134,6 +134,10 @@ nano setting.json
 And then modify your json file. <br />
 
 
+If these method didn't work for use FileZilla to upload file directly to the server.
+[ How to upload files to your web server using FileZilla ](https://www.youtube.com/watch?v=9wlNS1iO_AM )
+
+
 
 
 # How to install
