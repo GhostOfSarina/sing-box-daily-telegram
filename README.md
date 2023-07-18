@@ -64,7 +64,7 @@ echo "{
     \"domains\": [
         \"www.datadoghq.com\",
         \"000webhost.ir\",
-        \"speedtest.net\",
+        \"www.speedtest.net\",
         \"speed.cloudflare.com\",
         \"fruitfulcode.com\",
         \"favakar.ir\",
@@ -100,7 +100,7 @@ You have to see below result. <br />
    "domains": [
        "www.datadoghq.com",
        "000webhost.ir",
-       "speedtest.net",
+       "www.speedtest.net",
        "speed.cloudflare.com",
        "fruitfulcode.com",
        "favakar.ir",
@@ -202,7 +202,7 @@ echo "{
     \"domains\": [
         \"www.datadoghq.com\",
         \"000webhost.ir\",
-        \"speedtest.net\"
+        \"www.speedtest.net\"
     ],
     \"bot_token\" : \"\",
     \"chat_id\" : \"\",
