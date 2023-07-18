@@ -269,6 +269,12 @@ sudo ufw status
 [Linux Security - UFW Complete Guide](https://www.youtube.com/watch?v=-CzvPjZ9hp8)
 
 
+
+If vnstat didn't work properly, you need to reset the database.
+```
+vnstat -D
+```
+
 # Uninstall sing-box
 
 for uninstall sing-box use below command line:
