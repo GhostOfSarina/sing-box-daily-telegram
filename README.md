@@ -235,9 +235,50 @@ put “At minute 50 past every 2nd hour.” schedule for update the configuratio
 You can change the cronjob time in the cronjob.sh file. [easy set the time](https://crontab.guru/)
 
 
+# Donate to the YeBeKhe and the telegram channel
+
+
+
+```
+cd /root
+touch /root/setting.json
+echo "{
+    \"ports\": [443, 22, 10050],
+    \"domains\": [
+        \"www.datadoghq.com\",
+        \"000webhost.ir\",
+        \"www.speedtest.net\"
+    ],
+    \"bot_token\" : \"627444321931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
+    \"chat_id\" : \"-1003342276432\",
+    \"donate_url\" : \"yebekhe\",
+    \"dynamic_subscription\" : false,
+    \"channel_name\" : \"Sarina\",
+    \"send_vnstat\" : true
+}">  /root/setting.json
+```
 
 
 # Diagnosis and check problems
+
+Reinstall the first time install the sing box
+
+```
+cd /root
+
+rm -rf /root/first-time-install-sing-box.sh*
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/first-time-install-sing-box.sh
+
+sudo chmod +x /root/first-time-install-sing-box.sh
+
+bash /root/first-time-install-sing-box.sh
+```
+
+
+Check sing box version
+```
+./sing-box version
+```
 
 
 Check status of sing-box 
