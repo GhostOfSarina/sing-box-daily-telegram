@@ -250,11 +250,18 @@ You can change the cronjob time in the cronjob.sh file. [easy set the time](http
 cd /root
 touch /root/setting.json
 echo "{
-    \"ports\": [443, 22, 10050],
+    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 ],
     \"domains\": [
         \"www.datadoghq.com\",
         \"000webhost.ir\",
-        \"www.speedtest.net\"
+        \"www.speedtest.net\",
+        \"speed.cloudflare.com\",
+        \"fruitfulcode.com\",
+        \"speedtest.iranet.ir\",
+        \"benecke.com\",
+        \"tarhpro.ir\",
+        \"fernandotrueba.com\",
+        \"mathhub.info\"
     ],
     \"bot_token\" : \"627444321931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
     \"chat_id\" : \"-1003342276432\",
