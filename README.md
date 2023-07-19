@@ -64,7 +64,7 @@ echo "{
     \"domains\": [
         \"www.datadoghq.com\",
         \"000webhost.ir\",
-        \"speedtest.net\",
+        \"www.speedtest.net\",
         \"speed.cloudflare.com\",
         \"fruitfulcode.com\",
         \"favakar.ir\",
@@ -100,7 +100,7 @@ You have to see below result. <br />
    "domains": [
        "www.datadoghq.com",
        "000webhost.ir",
-       "speedtest.net",
+       "www.speedtest.net",
        "speed.cloudflare.com",
        "fruitfulcode.com",
        "favakar.ir",
@@ -132,6 +132,10 @@ wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/mai
 nano setting.json
 ```
 And then modify your json file. <br />
+
+
+If these method didn't work for use FileZilla to upload file directly to the server.
+[ How to upload files to your web server using FileZilla ](https://www.youtube.com/watch?v=9wlNS1iO_AM )
 
 
 
@@ -202,7 +206,7 @@ echo "{
     \"domains\": [
         \"www.datadoghq.com\",
         \"000webhost.ir\",
-        \"speedtest.net\"
+        \"www.speedtest.net\"
     ],
     \"bot_token\" : \"\",
     \"chat_id\" : \"\",
@@ -223,8 +227,12 @@ for edit cronjob use these command:
 ```crontab -e```
 
 
-put every hour schedule for update the configuration. 
-```0 * * * *```
+put “At minute 50 past every 2nd hour.” schedule for update the configuration. 
+```50 */2 * * *```
+
+
+You can change the cronjob time in the cronjob.sh file. [easy set the time](https://crontab.guru/)
+
 
 
 
@@ -253,6 +261,47 @@ echo "" > /var/log/kern.log
 echo "" > /var/log/syslog
 service syslog restart
 journalctl --vacuum-size=50M
+
+```
+
+check the website 
+```
+http://ip
+
+```
+
+If you had firewall on your server, you need to open the port that you want to use. 
+```
+sudo ufw status
+```
+[Linux Security - UFW Complete Guide](https://www.youtube.com/watch?v=-CzvPjZ9hp8)
+
+
+
+If vnstat didn't work properly, you need to reset the database.
+```
+vnstat -D
+```
+
+Or Another solution was to remove the folder it uses to store its data (/var/lib/vnstat) and create a new empty directory instead. You may need to run vnstatd manually once to create the database after that:
+
+```
+vnstatd -n -s
+```
+Apart from that, I also needed to apply 
+```
+sudo chown -R vnstat:vnstat /var/lib/vnstat
+```
+
+# Uninstall sing-box
+
+for uninstall sing-box use below command line:
+```
+bash /root/first-time-install-sing-box.sh
+    
+>>> choose 2. Uninstall
+
+rm /root/setting.json
 
 ```
 
@@ -294,6 +343,7 @@ This part for fake html and give url link to members of the Telegram channel.
 
 
 you can share ```http://ip/subscribe.txt``` to members of the Telegram channel.
+Dynamic subscribe has different format like this ```http://ip/subscribe.122.txt``` 
 And Also you can use ```http://ip ``` for fake html.
 
 
