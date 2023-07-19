@@ -96,14 +96,14 @@ For check your json file you can use below command line. <br />
 You have to see below result. <br />
 ```
 {
-   "ports": [443, 22, 2087, 8880, 10050, 2053, 2082, 8443, 6443, 2096 ],
+   "ports": [443, 22, 2058, 8880, 10050, 19215, 2082, 8443, 6443, 2096 ],
    "domains": [
        "www.datadoghq.com",
        "000webhost.ir",
-       "www.speedtest.net",
+       "speedtest.iranet.ir",
        "speed.cloudflare.com",
        "fruitfulcode.com",
-       "favakar.ir",
+       "speedtest.iranet.ir",
        "benecke.com",
        "tarhpro.ir",
        "fernandotrueba.com",
