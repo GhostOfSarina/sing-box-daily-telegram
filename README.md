@@ -60,14 +60,14 @@ Edit this setting file base on your needs.<br />
 cd /root
 touch /root/setting.json
 echo "{
-    \"ports\": [443, 22, 2087, 8880, 10050, 2053, 2082, 8443, 6443, 2096 ],
+    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 ],
     \"domains\": [
         \"www.datadoghq.com\",
         \"000webhost.ir\",
         \"www.speedtest.net\",
         \"speed.cloudflare.com\",
         \"fruitfulcode.com\",
-        \"favakar.ir\",
+        \"speedtest.iranet.ir\",
         \"benecke.com\",
         \"tarhpro.ir\",
         \"fernandotrueba.com\",
@@ -202,17 +202,24 @@ Don't need to have telegram bot.<br />
 cd /root
 touch /root/setting.json
 echo "{
-    \"ports\": [443, 22, 10050],
+    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 ],
     \"domains\": [
         \"www.datadoghq.com\",
         \"000webhost.ir\",
-        \"www.speedtest.net\"
+        \"www.speedtest.net\",
+        \"speed.cloudflare.com\",
+        \"fruitfulcode.com\",
+        \"speedtest.iranet.ir\",
+        \"benecke.com\",
+        \"tarhpro.ir\",
+        \"fernandotrueba.com\",
+        \"mathhub.info\"
     ],
     \"bot_token\" : \"\",
     \"chat_id\" : \"\",
     \"donate_url\" : \"yebekhe\",
     \"dynamic_subscription\" : false,
-    \"channel_name\" : \"Sarina\",
+    \"channel_name\" : \"sarina\",
     \"send_vnstat\" : false
 }">  /root/setting.json
 ```
