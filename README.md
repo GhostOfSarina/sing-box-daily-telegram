@@ -228,7 +228,8 @@ for edit cronjob use these command:
 
 
 put “At minute 50 past every 2nd hour.” schedule for update the configuration. 
-```50 */2 * * *```
+```28 */3 * * *```
+
 
 
 You can change the cronjob time in the cronjob.sh file. [easy set the time](https://crontab.guru/)
