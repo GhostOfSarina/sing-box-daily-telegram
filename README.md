@@ -348,6 +348,33 @@ rm /root/setting.json
 ```
 
 
+If uninstall didn't work properly, you need to run these commands manually:
+
+```
+# Stop and disable sing-box service
+systemctl stop sing-box
+systemctl disable sing-box
+
+# Remove files
+rm /etc/systemd/system/sing-box.service
+rm /root/reality.json
+rm /root/sing-box
+rm /root/subscribe.*
+rm -rf /var/www/hml/subscribe.*
+rm /root/public_key.txt
+rm /root/sing-box-telegram
+rm /root/first-time-install-sing-box.sh
+rm /root/reinstall-sing-box.sh
+rm /root/make-subscribe.sh
+```
+
+And if you want delete setting.json
+
+```
+rm /root/setting.json
+```
+
+
 # Find Best SNI for the sing-box
 
 You can find the best SNI with the following github repository:
