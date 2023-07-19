@@ -228,7 +228,7 @@ for edit cronjob use these command:
 
 
 put “At minute 50 past every 2nd hour.” schedule for update the configuration. 
-```28 */3 * * *```
+```28 */2 * * *```
 
 
 
@@ -346,6 +346,16 @@ bash /root/first-time-install-sing-box.sh
 rm /root/setting.json
 
 ```
+
+
+# Find Best SNI for the sing-box
+
+You can find the best SNI with the following github repository:
+
+[TLS Checker](https://github.com/ImanMontajabi/TLS-Checker)
+[ List of servers to test speedtest-cli ](https://gist.github.com/ofou/654efe67e173a6bff5c64ba26c09d058)
+[scan reality address in Persian ](https://www.youtube.com/watch?v=ljYG6KSGw88&t=277s)
+[Reality - TLS - Scanner](https://github.com/XTLS/RealiTLScanner)
 
 
 
