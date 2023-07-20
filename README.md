@@ -399,11 +399,11 @@ rm /root/setting.json
 
 You can find the best SNI with the following github repository:
 
-[TLS Checker](https://github.com/ImanMontajabi/TLS-Checker)
-[ List of servers to test speedtest-cli ](https://gist.github.com/ofou/654efe67e173a6bff5c64ba26c09d058)
-[scan reality address in Persian ](https://www.youtube.com/watch?v=ljYG6KSGw88&t=277s)
-[Reality - TLS - Scanner](https://github.com/XTLS/RealiTLScanner)
-
+[TLS Checker](https://github.com/ImanMontajabi/TLS-Checker) <br />
+[ List of servers to test speedtest-cli ](https://gist.github.com/ofou/654efe67e173a6bff5c64ba26c09d058) <br />
+[scan reality address in Persian ](https://www.youtube.com/watch?v=ljYG6KSGw88&t=277s) <br />
+[Reality - TLS - Scanner](https://github.com/XTLS/RealiTLScanner) <br />
+ 
 
 
 ##  << Other options ( professional edit project) >>
