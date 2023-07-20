@@ -275,6 +275,12 @@ echo "{
 
 # Diagnosis and check problems
 
+
+Show errors of cron jobs
+```
+/root/cronjob.log
+```
+
 Reinstall the first time install the sing box
 
 ```

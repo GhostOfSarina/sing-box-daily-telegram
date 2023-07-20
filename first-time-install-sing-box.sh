@@ -277,7 +277,7 @@ if /root/sing-box check -c /root/reality.json; then
 
     # Install cron job 
     croncmd="/root/sing-box-telegram > /root/cronjob.log 2>&1"
-    cronjob="0 9 1-31/3 * * $croncmd"
+    cronjob="0 13 * * * $croncmd"
     ( crontab -l | grep -v -F "$croncmd" ; echo "$cronjob" ) | crontab -
 
 
