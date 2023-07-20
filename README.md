@@ -242,7 +242,7 @@ put “At minute 50 past every 2nd hour.” schedule for update the configuratio
 You can change the cronjob time in the cronjob.sh file. [easy set the time](https://crontab.guru/)
 
 
-# Donate to the YeBeKhe and the telegram channel
+# Donate to the YeBeKhe and send to your telegram channel
 
 
 
