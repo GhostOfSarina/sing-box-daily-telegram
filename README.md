@@ -207,18 +207,23 @@ Don't need to have telegram bot.<br />
 cd /root
 touch /root/setting.json
 echo "{
-    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 ],
+    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 , 2053 , 2983 , 2052 ,  2086 , 2095   ],
     \"domains\": [
-        \"www.datadoghq.com\",
-        \"000webhost.ir\",
-        \"www.speedtest.net\",
+        \"ftp.debian.org\",
+        \"discord.com\",
+        \"datadoghq.com\",
         \"speed.cloudflare.com\",
-        \"fruitfulcode.com\",
-        \"speedtest.iranet.ir\",
-        \"benecke.com\",
-        \"tarhpro.ir\",
-        \"fernandotrueba.com\",
-        \"mathhub.info\"
+        \"www.speedtest.net\",
+        \"aws.amazon.com\",
+        \"account.zula.ir\",
+        \"taunusgaerten.com\",
+        \"pantercon.net\",
+        \"nachtzug.net\",
+        \"ballinstadt.de\",
+        \"atrpoosh.ir\",
+        \"atrsun.com\",
+        \"faraso.org\",
+        \"hamiseir.ir\"
     ],
     \"bot_token\" : \"\",
     \"chat_id\" : \"\",
@@ -255,18 +260,23 @@ You can change the cronjob time in the cronjob.sh file. [easy set the time](http
 cd /root
 touch /root/setting.json
 echo "{
-    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 ],
+    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 , 2053 , 2983 , 2052 ,  2086 , 2095   ],
     \"domains\": [
-        \"www.datadoghq.com\",
-        \"000webhost.ir\",
-        \"www.speedtest.net\",
+        \"ftp.debian.org\",
+        \"discord.com\",
+        \"datadoghq.com\",
         \"speed.cloudflare.com\",
-        \"fruitfulcode.com\",
-        \"speedtest.iranet.ir\",
-        \"benecke.com\",
-        \"tarhpro.ir\",
-        \"fernandotrueba.com\",
-        \"mathhub.info\"
+        \"www.speedtest.net\",
+        \"aws.amazon.com\",
+        \"account.zula.ir\",
+        \"taunusgaerten.com\",
+        \"pantercon.net\",
+        \"nachtzug.net\",
+        \"ballinstadt.de\",
+        \"atrpoosh.ir\",
+        \"atrsun.com\",
+        \"faraso.org\",
+        \"hamiseir.ir\"
     ],
     \"bot_token\" : \"627444321931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
     \"chat_id\" : \"-1003342276432\",
