@@ -9,18 +9,19 @@ import (
 
 func main() {
 
+	fmt.Println("restarting...")
 	//Reinstall sing box
 	_, err := exec.Command("/bin/sh", "./reinstall-sing-box.sh").Output()
 	if err != nil {
 		fmt.Printf("error make-subscribe %s", err)
 	}
 
-	//Read files
+	fmt.Println("read setting file...")
 
+	//Read files
 	serverIP := GetOutboundIP().String()
 
 	//read configuration from setting file
-
 	setting, err := ReadSettingsFile()
 	if err != nil {
 		fmt.Printf("error read settings file %v ", err)
@@ -28,6 +29,8 @@ func main() {
 
 	//todo read setting from config
 	var newReality RealityJson
+
+	fmt.Println("renew configuration...")
 
 	//renew existing reality json
 	StringConfigZero, StringConfigAll, newReality := RenewConfigurations(setting, serverIP, newReality)
@@ -39,6 +42,12 @@ func main() {
 	err = WriteFile("./reality.json", newReality)
 	if err != nil {
 		log.Fatal("error during the WriteFile")
+	}
+
+	var AggregateSubscriptionNameLink string
+	//aggregate subscriptions
+	if len(setting.AggregateSubscriptions) > 0 {
+		AggregateSubscriptionNameLink = AggregateSubscriptions(setting, StringConfigAll)
 	}
 
 	//make subscription
@@ -54,19 +63,32 @@ func main() {
 			fmt.Printf("error %s", err)
 		}
 
-		err = CallTelegram("You can also use this link to subscribe to all configuration:\nhttp://"+serverIP+"/"+subscriptionNameLink, setting)
-		if err != nil {
-			fmt.Printf("error %s", err)
+		if len(setting.AggregateSubscriptions) > 0 {
+			err = CallTelegram("Aggregate link is: \nhttp://"+serverIP+"/"+AggregateSubscriptionNameLink, setting)
+			if err != nil {
+				fmt.Printf("error %s", err)
+			}
+		} else {
+			err = CallTelegram("You can also use this link to subscribe to all configuration:\nhttp://"+serverIP+"/"+subscriptionNameLink, setting)
+			if err != nil {
+				fmt.Printf("error %s", err)
+			}
 		}
 	}
 
 	//call donate endpoint
-
 	if len(setting.DonateURL) > 4 {
 
-		subscriptionNameLinkFull := "http://" + serverIP + "/" + subscriptionNameLink
+		if len(setting.AggregateSubscriptions) > 0 {
 
-		CallDonate(subscriptionNameLinkFull, setting)
+			subscriptionNameLinkFull := "http://" + serverIP + "/" + AggregateSubscriptionNameLink
+			CallDonate(subscriptionNameLinkFull, setting)
+
+		} else {
+
+			subscriptionNameLinkFull := "http://" + serverIP + "/" + subscriptionNameLink
+			CallDonate(subscriptionNameLinkFull, setting)
+		}
 
 	}
 

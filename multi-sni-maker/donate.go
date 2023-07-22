@@ -10,17 +10,29 @@ func CallDonate(subscriptionLink string, setting Setting) {
 	fmt.Println("curl Donate...")
 
 	var address string
-	if setting.DonateURL == "yebekhe" {
+	var donateURL string
+
+	if setting.DonateURL == "stop" {
 		address = "https://yebekhe.000webhostapp.com/donate/"
+		donateURL = address + "?remove=true" + "&username=" + setting.ChannelName
+	} else if setting.DonateURL == "yebekhe" {
+		address = "https://yebekhe.000webhostapp.com/donate/"
+		donateURL = address + "?url=" + url.QueryEscape(subscriptionLink) + "&username=" + setting.ChannelName
 	}
 
-	// make GET request to API to get user by ID
-	donateURL := address + "?url=" + url.QueryEscape(subscriptionLink) + "&username=" + setting.ChannelName
+	fmt.Println(donateURL)
 
-	// fmt.Println(donateURL)
+	err := curlFunc(donateURL)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+}
+
+func curlFunc(address string) error {
 
 	// Encode the URL
-	encodedURL, err := url.Parse(donateURL)
+	encodedURL, err := url.Parse(address)
 	if err != nil {
 		fmt.Println("Error parsing URL:", err)
 	}
@@ -29,7 +41,10 @@ func CallDonate(subscriptionLink string, setting Setting) {
 	resp, err := http.Get(encodedURL.String())
 	if err != nil {
 		fmt.Println("Error making GET request:", err)
+		return nil
 	}
 	defer resp.Body.Close()
+
+	return nil
 
 }

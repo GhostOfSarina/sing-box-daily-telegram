@@ -72,10 +72,11 @@ type Setting struct {
 	Ports   []int    `json:"ports"`
 	Domains []string `json:"domains"`
 	// GRPC                []bool   `json:"grpc"`
-	BotToken            string `json:"bot_token"`
-	ChatID              string `json:"chat_id"`
-	DonateURL           string `json:"donate_url"`
-	DynamicSubscription bool   `json:"dynamic_subscription"`
-	ChannelName         string `json:"channel_name"`
-	SendVNstat          bool   `json:"send_vnstat"`
+	BotToken               string   `json:"bot_token"`
+	ChatID                 string   `json:"chat_id"`
+	DonateURL              string   `json:"donate_url"`
+	DynamicSubscription    bool     `json:"dynamic_subscription"`
+	ChannelName            string   `json:"channel_name"`
+	SendVNstat             bool     `json:"send_vnstat"`
+	AggregateSubscriptions []string `json:"aggregate_subscriptions"`
 }

@@ -21,8 +21,8 @@ It means that implement outstanding feature ```sb-server-configer``` with bash s
 iSegaro sing-box Reality configuration [sing-box](https://raw.githubusercontent.com/iSegaro/Sing-Box/main/sing-box_config.json)<br />
 iSegaro sing-box GRPC Reality configuration [sing-box](https://github.com/iSegaro/Sing-Box/blob/main/sing-box_config_GRPC.json)<br />
 My sister-in-law project is [yebekhe](https://github.com/yebekhe/TelegramV2rayCollector). This project gathering configuration from the telegram channel<br />
-
-
+If you want to aggregate subscriptions with serverless system better used below repository.
+[V2Hub](https://github.com/yebekhe/V2Hub)<br />
 
 # Fill bot token and chanel id files with your own information.
 
@@ -54,31 +54,39 @@ Edit this setting file base on your needs.<br />
 ```dynamic_subscription``` is the boolean value that you want to have dynamic subscribe link like ```subscribe.txt``` or dynamic ones like ```subscribe.122.txt``` <br />
 ```channel_name``` is the channel name that you want to send your configuration. You can choose what ever your want. System didn't check it. <br />
 ```send_vnstat``` is the boolean value that you want to send ( Bandwidth usage ) vnstat information to the channel. <br />
+```list_of_subscriptions``` is list of other services that you want to aggregate . if you don't need it leave it without data  ```aggregate_subscriptions : []```
 
 
 ```
 cd /root
 touch /root/setting.json
 echo "{
-    \"ports\": [443, 22, 2087, 8880, 10050, 2053, 2082, 8443, 6443, 2096 ],
+    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 , 2053 , 2983 , 2052 ,  2086 , 2095   ],
     \"domains\": [
-        \"www.datadoghq.com\",
-        \"000webhost.ir\",
-        \"www.speedtest.net\",
+        \"ftp.debian.org\",
+        \"discord.com\",
+        \"datadoghq.com\",
         \"speed.cloudflare.com\",
-        \"fruitfulcode.com\",
-        \"favakar.ir\",
-        \"benecke.com\",
-        \"tarhpro.ir\",
-        \"fernandotrueba.com\",
-        \"mathhub.info\"
+        \"www.speedtest.net\",
+        \"aws.amazon.com\",
+        \"account.zula.ir\",
+        \"taunusgaerten.com\",
+        \"pantercon.net\",
+        \"nachtzug.net\",
+        \"ballinstadt.de\",
+        \"atrpoosh.ir\",
+        \"atrsun.com\",
+        \"faraso.org\",
+        \"hamiseir.ir\"
     ],
     \"bot_token\" : \"627434621931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
     \"chat_id\" : \"-1002343276432\",
     \"donate_url\" : \"https://where_ever_you_want.site\",
     \"dynamic_subscription\" : true,
     \"channel_name\" : \"Sarina_Esmailzadeh\",
-    \"send_vnstat\" : true
+    \"send_vnstat\" : true,
+    \"aggregate_subscriptions\" : []
+
 }">  /root/setting.json
 ```
 
@@ -96,14 +104,14 @@ For check your json file you can use below command line. <br />
 You have to see below result. <br />
 ```
 {
-   "ports": [443, 22, 2087, 8880, 10050, 2053, 2082, 8443, 6443, 2096 ],
+   "ports": [443, 22, 2058, 8880, 10050, 19215, 2082, 8443, 6443, 2096 ],
    "domains": [
        "www.datadoghq.com",
        "000webhost.ir",
-       "www.speedtest.net",
+       "speedtest.iranet.ir",
        "speed.cloudflare.com",
        "fruitfulcode.com",
-       "favakar.ir",
+       "speedtest.iranet.ir",
        "benecke.com",
        "tarhpro.ir",
        "fernandotrueba.com",
@@ -114,7 +122,9 @@ You have to see below result. <br />
    "donate_url" : "",
    "dynamic_subscription" : false,
    "channel_name" : "Sarina_Esmailzadeh",
-   "send_vnstat" : true
+   "send_vnstat" : true,
+   "aggregate_subscriptions" : []
+
 }
 
 ```
@@ -202,18 +212,32 @@ Don't need to have telegram bot.<br />
 cd /root
 touch /root/setting.json
 echo "{
-    \"ports\": [443, 22, 10050],
+    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 , 2053 , 2983 , 2052 ,  2086 , 2095   ],
     \"domains\": [
-        \"www.datadoghq.com\",
-        \"000webhost.ir\",
-        \"www.speedtest.net\"
+        \"ftp.debian.org\",
+        \"discord.com\",
+        \"datadoghq.com\",
+        \"speed.cloudflare.com\",
+        \"www.speedtest.net\",
+        \"aws.amazon.com\",
+        \"account.zula.ir\",
+        \"taunusgaerten.com\",
+        \"pantercon.net\",
+        \"nachtzug.net\",
+        \"ballinstadt.de\",
+        \"atrpoosh.ir\",
+        \"atrsun.com\",
+        \"faraso.org\",
+        \"hamiseir.ir\"
     ],
     \"bot_token\" : \"\",
     \"chat_id\" : \"\",
     \"donate_url\" : \"yebekhe\",
     \"dynamic_subscription\" : false,
-    \"channel_name\" : \"Sarina\",
-    \"send_vnstat\" : false
+    \"channel_name\" : \"sarina\",
+    \"send_vnstat\" : false,
+    \"aggregate_subscriptions\" : []
+
 }">  /root/setting.json
 ```
 
@@ -228,38 +252,155 @@ for edit cronjob use these command:
 
 
 put “At minute 50 past every 2nd hour.” schedule for update the configuration. 
-```28 */3 * * *```
+```28 */2 * * *```
 
 
 
 You can change the cronjob time in the cronjob.sh file. [easy set the time](https://crontab.guru/)
 
 
-# Donate to the YeBeKhe and the telegram channel
-
+# Donate to the YeBeKhe and send to your telegram channel
 
 
 ```
 cd /root
 touch /root/setting.json
 echo "{
-    \"ports\": [443, 22, 10050],
+    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 , 2053 , 2983 , 2052 ,  2086 , 2095   ],
     \"domains\": [
-        \"www.datadoghq.com\",
-        \"000webhost.ir\",
-        \"www.speedtest.net\"
+        \"ftp.debian.org\",
+        \"discord.com\",
+        \"datadoghq.com\",
+        \"speed.cloudflare.com\",
+        \"www.speedtest.net\",
+        \"aws.amazon.com\",
+        \"account.zula.ir\",
+        \"taunusgaerten.com\",
+        \"pantercon.net\",
+        \"nachtzug.net\",
+        \"ballinstadt.de\",
+        \"atrpoosh.ir\",
+        \"atrsun.com\",
+        \"faraso.org\",
+        \"hamiseir.ir\"
     ],
-    \"bot_token\" : \"627444321931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
-    \"chat_id\" : \"-1003342276432\",
+    \"bot_token\" : \"627344321931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
+    \"chat_id\" : \"-1003342176532\",
     \"donate_url\" : \"yebekhe\",
     \"dynamic_subscription\" : false,
     \"channel_name\" : \"Sarina\",
-    \"send_vnstat\" : true
+    \"send_vnstat\" : true,
+    \"aggregate_subscriptions\" : []
+
 }">  /root/setting.json
 ```
 
 
+
+ # Stop sending donates to the Yebekhe server
+
+
+ Just write ```stop``` in ```donate_url``` part of the configuration section. And run ```./sing-box-telegram``` Then remove the ```stop``` form your configuration.
+
+ ```
+cd /root
+touch /root/setting.json
+echo "{
+    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 , 2053 , 2983 , 2052 ,  2086 , 2095   ],
+    \"domains\": [
+        \"ftp.debian.org\",
+        \"discord.com\",
+        \"datadoghq.com\",
+        \"speed.cloudflare.com\",
+        \"www.speedtest.net\",
+        \"aws.amazon.com\",
+        \"account.zula.ir\",
+        \"taunusgaerten.com\",
+        \"pantercon.net\",
+        \"nachtzug.net\",
+        \"ballinstadt.de\",
+        \"atrpoosh.ir\",
+        \"atrsun.com\",
+        \"faraso.org\",
+        \"hamiseir.ir\"
+    ],
+    \"bot_token\" : \"627444321231:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
+    \"chat_id\" : \"-1003342276432\",
+    \"donate_url\" : \"stop\",
+    \"dynamic_subscription\" : false,
+    \"channel_name\" : \"Sarina\",
+    \"send_vnstat\" : true,
+    \"aggregate_subscriptions\" : []
+
+}">  /root/setting.json
+```
+
+
+
+# Aggregate list of subscription
+
+Imagine you have three servers in different zones. And you want to aggregated all of these link and make one single link.<br />
+
+for example: <br />
+http://1.22.33.444/subscribe.txt <br />
+http://2.22.33.444/subscribe.txt<br />
+http://3.22.33.444/subscribe.txt<br />
+
+now we make one single endpoint for you by this future: <br />
+
+We will put this server subscription in front of these links as default values: <br />
+
+
+Final result will be in below address <br />
+
+http://ip-this-server/aggregate.txt
+
+ ```
+cd /root
+touch /root/setting.json
+echo "{
+    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 , 2053 , 2983 , 2052 ,  2086 , 2095   ],
+    \"domains\": [
+        \"ftp.debian.org\",
+        \"discord.com\",
+        \"datadoghq.com\",
+        \"speed.cloudflare.com\",
+        \"www.speedtest.net\",
+        \"aws.amazon.com\",
+        \"account.zula.ir\",
+        \"taunusgaerten.com\",
+        \"pantercon.net\",
+        \"nachtzug.net\",
+        \"ballinstadt.de\",
+        \"atrpoosh.ir\",
+        \"atrsun.com\",
+        \"faraso.org\",
+        \"hamiseir.ir\"
+    ],
+    \"bot_token\" : \"627444321231:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
+    \"chat_id\" : \"-1003342276432\",
+    \"donate_url\" : \"\",
+    \"dynamic_subscription\" : false,
+    \"channel_name\" : \"Sarina\",
+    \"send_vnstat\" : true,
+    \"aggregate_subscriptions\" : [ \"http://1.22.33.444/subscribe.txt\" , \"http://2.22.33.444/subscribe.txt\" , \"http://3.22.33.444/subscribe.txt\"]
+
+}">  /root/setting.json
+```
+
+
+
+If you want to aggregate subscriptions with serverless system better used below repository.
+[V2Hub](https://github.com/yebekhe/V2Hub)
+
+
 # Diagnosis and check problems
+
+
+Show errors of cron jobs
+```
+/root/cronjob.log
+```
 
 Reinstall the first time install the sing box
 
@@ -348,6 +489,43 @@ rm /root/setting.json
 ```
 
 
+If uninstall didn't work properly, you need to run these commands manually:
+
+```
+# Stop and disable sing-box service
+systemctl stop sing-box
+systemctl disable sing-box
+
+# Remove files
+rm /etc/systemd/system/sing-box.service
+rm /root/reality.json
+rm /root/sing-box
+rm /root/subscribe.*
+rm -rf /var/www/hml/subscribe.*
+rm /root/public_key.txt
+rm /root/sing-box-telegram
+rm /root/first-time-install-sing-box.sh
+rm /root/reinstall-sing-box.sh
+rm /root/make-subscribe.sh
+```
+
+And if you want delete setting.json
+
+```
+rm /root/setting.json
+```
+
+
+# Find Best SNI for the sing-box
+
+You can find the best SNI with the following github repository:
+
+[TLS Checker](https://github.com/ImanMontajabi/TLS-Checker) <br />
+[ List of servers to test speedtest-cli ](https://gist.github.com/ofou/654efe67e173a6bff5c64ba26c09d058) <br />
+[scan reality address in Persian ](https://www.youtube.com/watch?v=ljYG6KSGw88&t=277s) <br />
+[Reality - TLS - Scanner](https://github.com/XTLS/RealiTLScanner) <br />
+ 
+
 
 ##  << Other options ( professional edit project) >>
 
@@ -406,3 +584,4 @@ ch /root
 sudo chmod +x /root/obfs4proxy.sh
 bash ./obfs4proxy.sh
 ```
+
