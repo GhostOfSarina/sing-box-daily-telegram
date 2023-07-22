@@ -54,6 +54,7 @@ Edit this setting file base on your needs.<br />
 ```dynamic_subscription``` is the boolean value that you want to have dynamic subscribe link like ```subscribe.txt``` or dynamic ones like ```subscribe.122.txt``` <br />
 ```channel_name``` is the channel name that you want to send your configuration. You can choose what ever your want. System didn't check it. <br />
 ```send_vnstat``` is the boolean value that you want to send ( Bandwidth usage ) vnstat information to the channel. <br />
+```list_of_subscriptions``` is list of other services that you want to aggregate . if you don't need it leave it without data  ```\"aggregate_subscriptions\" : []```
 
 
 ```
@@ -83,7 +84,9 @@ echo "{
     \"donate_url\" : \"https://where_ever_you_want.site\",
     \"dynamic_subscription\" : true,
     \"channel_name\" : \"Sarina_Esmailzadeh\",
-    \"send_vnstat\" : true
+    \"send_vnstat\" : true,
+    \"aggregate_subscriptions\" : []
+
 }">  /root/setting.json
 ```
 
@@ -119,7 +122,9 @@ You have to see below result. <br />
    "donate_url" : "",
    "dynamic_subscription" : false,
    "channel_name" : "Sarina_Esmailzadeh",
-   "send_vnstat" : true
+   "send_vnstat" : true,
+   "aggregate_subscriptions" : []
+
 }
 
 ```
@@ -230,7 +235,9 @@ echo "{
     \"donate_url\" : \"yebekhe\",
     \"dynamic_subscription\" : false,
     \"channel_name\" : \"sarina\",
-    \"send_vnstat\" : false
+    \"send_vnstat\" : false,
+    \"aggregate_subscriptions\" : []
+
 }">  /root/setting.json
 ```
 
@@ -255,7 +262,6 @@ You can change the cronjob time in the cronjob.sh file. [easy set the time](http
 # Donate to the YeBeKhe and send to your telegram channel
 
 
-
 ```
 cd /root
 touch /root/setting.json
@@ -278,14 +284,105 @@ echo "{
         \"faraso.org\",
         \"hamiseir.ir\"
     ],
-    \"bot_token\" : \"627444321931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
-    \"chat_id\" : \"-1003342276432\",
+    \"bot_token\" : \"627344321931:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
+    \"chat_id\" : \"-1003342176532\",
     \"donate_url\" : \"yebekhe\",
     \"dynamic_subscription\" : false,
     \"channel_name\" : \"Sarina\",
-    \"send_vnstat\" : true
+    \"send_vnstat\" : true,
+    \"aggregate_subscriptions\" : []
+
 }">  /root/setting.json
 ```
+
+
+
+ # Stop sending donates to the Yebekhe server
+
+
+ Just write ```stop``` in ```donate_url``` part of the configuration section. And run ```./sing-box-telegram``` Then remove the ```stop``` form your configuration.
+
+ ```
+cd /root
+touch /root/setting.json
+echo "{
+    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 , 2053 , 2983 , 2052 ,  2086 , 2095   ],
+    \"domains\": [
+        \"ftp.debian.org\",
+        \"discord.com\",
+        \"datadoghq.com\",
+        \"speed.cloudflare.com\",
+        \"www.speedtest.net\",
+        \"aws.amazon.com\",
+        \"account.zula.ir\",
+        \"taunusgaerten.com\",
+        \"pantercon.net\",
+        \"nachtzug.net\",
+        \"ballinstadt.de\",
+        \"atrpoosh.ir\",
+        \"atrsun.com\",
+        \"faraso.org\",
+        \"hamiseir.ir\"
+    ],
+    \"bot_token\" : \"627444321231:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
+    \"chat_id\" : \"-1003342276432\",
+    \"donate_url\" : \"stop\",
+    \"dynamic_subscription\" : false,
+    \"channel_name\" : \"Sarina\",
+    \"send_vnstat\" : true,
+    \"aggregate_subscriptions\" : []
+
+}">  /root/setting.json
+```
+
+
+
+# Aggregate list of subscription
+
+Imagine you have three servers in different zones. And you want to aggregated all of these link and make one single link.<br />
+
+for example: <br />
+http://1.22.33.444/subscribe.txt <br />
+http://2.22.33.444/subscribe.txt<br />
+http://3.22.33.444/subscribe.txt<br />
+
+now we make one single endpoint for you by this future: <br />
+
+http://ip-this-server/aggregate.txt
+
+ ```
+cd /root
+touch /root/setting.json
+echo "{
+    \"ports\": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 , 2053 , 2983 , 2052 ,  2086 , 2095   ],
+    \"domains\": [
+        \"ftp.debian.org\",
+        \"discord.com\",
+        \"datadoghq.com\",
+        \"speed.cloudflare.com\",
+        \"www.speedtest.net\",
+        \"aws.amazon.com\",
+        \"account.zula.ir\",
+        \"taunusgaerten.com\",
+        \"pantercon.net\",
+        \"nachtzug.net\",
+        \"ballinstadt.de\",
+        \"atrpoosh.ir\",
+        \"atrsun.com\",
+        \"faraso.org\",
+        \"hamiseir.ir\"
+    ],
+    \"bot_token\" : \"627444321231:bga9g_13IQBuAcDb3DSemBceracA-KDDA3b\",
+    \"chat_id\" : \"-1003342276432\",
+    \"donate_url\" : \"\",
+    \"dynamic_subscription\" : false,
+    \"channel_name\" : \"Sarina\",
+    \"send_vnstat\" : true,
+    \"aggregate_subscriptions\" : [ \"http://1.22.33.444/subscribe.txt\" , \"http://2.22.33.444/subscribe.txt\" , \"http://3.22.33.444/subscribe.txt\"]
+
+}">  /root/setting.json
+```
+
 
 
 # Diagnosis and check problems
@@ -478,7 +575,4 @@ ch /root
 sudo chmod +x /root/obfs4proxy.sh
 bash ./obfs4proxy.sh
 ```
-
-
-curl "https://yebekhe.000webhostapp.com/donate/?username=sarina&remove=true"
 
