@@ -21,8 +21,8 @@ It means that implement outstanding feature ```sb-server-configer``` with bash s
 iSegaro sing-box Reality configuration [sing-box](https://raw.githubusercontent.com/iSegaro/Sing-Box/main/sing-box_config.json)<br />
 iSegaro sing-box GRPC Reality configuration [sing-box](https://github.com/iSegaro/Sing-Box/blob/main/sing-box_config_GRPC.json)<br />
 My sister-in-law project is [yebekhe](https://github.com/yebekhe/TelegramV2rayCollector). This project gathering configuration from the telegram channel<br />
-
-
+If you want to aggregate subscriptions with serverless system better used below repository.
+[V2Hub](https://github.com/yebekhe/V2Hub)<br />
 
 # Fill bot token and chanel id files with your own information.
 
@@ -54,7 +54,7 @@ Edit this setting file base on your needs.<br />
 ```dynamic_subscription``` is the boolean value that you want to have dynamic subscribe link like ```subscribe.txt``` or dynamic ones like ```subscribe.122.txt``` <br />
 ```channel_name``` is the channel name that you want to send your configuration. You can choose what ever your want. System didn't check it. <br />
 ```send_vnstat``` is the boolean value that you want to send ( Bandwidth usage ) vnstat information to the channel. <br />
-```list_of_subscriptions``` is list of other services that you want to aggregate . if you don't need it leave it without data  ```\"aggregate_subscriptions\" : []```
+```list_of_subscriptions``` is list of other services that you want to aggregate . if you don't need it leave it without data  ```aggregate_subscriptions : []```
 
 
 ```
@@ -388,6 +388,10 @@ echo "{
 }">  /root/setting.json
 ```
 
+
+
+If you want to aggregate subscriptions with serverless system better used below repository.
+[V2Hub](https://github.com/yebekhe/V2Hub)
 
 
 # Diagnosis and check problems

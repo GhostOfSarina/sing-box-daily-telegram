@@ -30,7 +30,7 @@ func AggregateSubscriptions(setting Setting, StringConfigAll string) string {
 		subscriptionNameLink = "aggregate.txt"
 	}
 
-	SaveSubscribe("./"+subscriptionNameLink, StringConfigAll)
+	SaveSubscribe("./"+subscriptionNameLink, AllConfigurations)
 
 	return subscriptionNameLink
 
