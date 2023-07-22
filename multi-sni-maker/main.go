@@ -16,11 +16,9 @@ func main() {
 	}
 
 	//Read files
-
 	serverIP := GetOutboundIP().String()
 
 	//read configuration from setting file
-
 	setting, err := ReadSettingsFile()
 	if err != nil {
 		fmt.Printf("error read settings file %v ", err)
@@ -41,6 +39,12 @@ func main() {
 		log.Fatal("error during the WriteFile")
 	}
 
+	var AggregateSubscriptionNameLink string
+	//aggregate subscriptions
+	if len(setting.AggregateSubscriptions) > 0 {
+		AggregateSubscriptionNameLink = AggregateSubscriptions(setting, StringConfigAll)
+	}
+
 	//make subscription
 	subscriptionNameLink, err := DoSubscribe(setting, StringConfigAll)
 	if err != nil {
@@ -54,19 +58,32 @@ func main() {
 			fmt.Printf("error %s", err)
 		}
 
-		err = CallTelegram("You can also use this link to subscribe to all configuration:\nhttp://"+serverIP+"/"+subscriptionNameLink, setting)
-		if err != nil {
-			fmt.Printf("error %s", err)
+		if len(setting.AggregateSubscriptions) > 0 {
+			err = CallTelegram("Aggregate link is: \nhttp://"+serverIP+"/"+AggregateSubscriptionNameLink, setting)
+			if err != nil {
+				fmt.Printf("error %s", err)
+			}
+		} else {
+			err = CallTelegram("You can also use this link to subscribe to all configuration:\nhttp://"+serverIP+"/"+subscriptionNameLink, setting)
+			if err != nil {
+				fmt.Printf("error %s", err)
+			}
 		}
 	}
 
 	//call donate endpoint
-
 	if len(setting.DonateURL) > 4 {
 
-		subscriptionNameLinkFull := "http://" + serverIP + "/" + subscriptionNameLink
+		if len(setting.AggregateSubscriptions) > 0 {
 
-		CallDonate(subscriptionNameLinkFull, setting)
+			subscriptionNameLinkFull := "http://" + serverIP + "/" + AggregateSubscriptionNameLink
+			CallDonate(subscriptionNameLinkFull, setting)
+
+		} else {
+
+			subscriptionNameLinkFull := "http://" + serverIP + "/" + subscriptionNameLink
+			CallDonate(subscriptionNameLinkFull, setting)
+		}
 
 	}
 

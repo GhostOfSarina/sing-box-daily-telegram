@@ -348,6 +348,11 @@ http://3.22.33.444/subscribe.txt<br />
 
 now we make one single endpoint for you by this future: <br />
 
+We will put this server subscription in front of these links as default values: <br />
+
+
+Final result will be in below address <br />
+
 http://ip-this-server/aggregate.txt
 
  ```
