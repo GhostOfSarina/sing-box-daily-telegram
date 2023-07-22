@@ -9,11 +9,14 @@ import (
 
 func main() {
 
+	fmt.Println("restarting...")
 	//Reinstall sing box
 	_, err := exec.Command("/bin/sh", "./reinstall-sing-box.sh").Output()
 	if err != nil {
 		fmt.Printf("error make-subscribe %s", err)
 	}
+
+	fmt.Println("read setting file...")
 
 	//Read files
 	serverIP := GetOutboundIP().String()
@@ -26,6 +29,8 @@ func main() {
 
 	//todo read setting from config
 	var newReality RealityJson
+
+	fmt.Println("renew configuration...")
 
 	//renew existing reality json
 	StringConfigZero, StringConfigAll, newReality := RenewConfigurations(setting, serverIP, newReality)
