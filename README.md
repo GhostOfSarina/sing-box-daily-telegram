@@ -90,6 +90,24 @@ echo "{
 }">  /root/setting.json
 ```
 
+
+Another Method for modify setting.json
+
+
+```
+cd /root
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/setting.json
+nano /root/setting.json
+```
+[ آموزش کار کردن با نانو](https://www.youtube.com/watch?v=Aj2pmC0u2ow)<br />
+
+
+
+```
+wget https://raw.githubusercontent.com/GhostOfSarina/sing-box-daily-telegram/main/setting.json
+
+```
+
 Instead of creating the setting.json file, you can also use the following command to create the file and fill it with the default values. <br />
 
 Using Online Tool : Open a JSON Formatter tool from the link below <br />
@@ -99,14 +117,14 @@ Using Online Tool : Open a JSON Formatter tool from the link below <br />
 https://jsonformatter.org
 or
 https://codebeautify.org/jsonviewer
+or
+https://json-gui.esstudio.site/
 ```
 Copy and Paste the JSON Data, which is mentioned in Option 1 in the Input tool of the online tool . after making json format, write it with nano in ```setting.json```
 
-
-```
 nano /root/setting.json
-```
-[ آموزش کار کردن با نانو](https://www.youtube.com/watch?v=Aj2pmC0u2ow)
+
+
 
 
 # Check the setting.json 
