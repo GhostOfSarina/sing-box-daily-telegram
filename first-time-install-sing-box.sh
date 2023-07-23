@@ -16,7 +16,7 @@ sudo chmod +x /root/make-subscribe.sh
 
 
 rm -rf /root/sing-box-telegram*
-wget https://github.com/GhostOfSarina/sing-box-daily-telegram/releases/download/v.1.4.2/sing-box-telegram
+wget https://github.com/GhostOfSarina/sing-box-daily-telegram/releases/download/v.1.5.1/sing-box-telegram
 sudo chmod +x ./sing-box-telegram
 
 
