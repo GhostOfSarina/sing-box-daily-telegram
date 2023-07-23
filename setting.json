@@ -1,21 +1,27 @@
 {
-    "ports": [443, 22, 2087, 8880, 10050, 2053, 2082, 8443, 6443, 2096 ],
+    "ports": [443, 22, 2087, 8880, 10050, 2085, 2082, 8443, 6443, 2096 , 2053 , 2983 , 2052 ,  2086 , 2095   ],
     "domains": [
-        "www.datadoghq.com",
-        "000webhost.ir",
-        "speedtest.net",
-        "speed.cloudflare.com",
-        "fruitfulcode.com",
-        "favakar.ir",
-        "benecke.com",
-        "tarhpro.ir",
-        "fernandotrueba.com",
-        "mathhub.info"
+         "ftp.debian.org",
+         "discord.com",
+         "datadoghq.com",
+         "speed.cloudflare.com",
+         "www.speedtest.net",
+         "aws.amazon.com",
+         "account.zula.ir",
+         "taunusgaerten.com",
+         "pantercon.net",
+         "nachtzug.net",
+         "ballinstadt.de",
+         "atrpoosh.ir",
+         "atrsun.com",
+         "faraso.org",
+         "hamiseir.ir"
     ],
-    "bot_token" : "627442321931:bga9g_13IQBuAcDb3DSemBceracA-KDFA3b",
-    "chat_id" : "-1003382273432",
+    "bot_token" : "627442321431:bga9g_13IQBuAcDb3DSemBceracA-KDFS3b",
+    "chat_id" : "-1003385273232",
     "donate_url" : "",
     "dynamic_subscription" : false,
     "channel_name" : "Sarina_Esmailzadeh",
-    "send_vnstat" : true
+    "send_vnstat" : true,
+    "aggregate_subscriptions" : []
  }
