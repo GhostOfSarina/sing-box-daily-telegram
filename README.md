@@ -473,6 +473,8 @@ Check volume of disk usage in server
 ```
 df -h
 
+ls -laht /var/log
+
 echo "" > /var/log/kern.log
 echo "" > /var/log/syslog
 service syslog restart
