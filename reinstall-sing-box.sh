@@ -16,6 +16,11 @@ rm /var/www/html/subscribe.*
 vnstat > /root/log.txt
 
 
+ls -laht /var/log
+echo "hi" > /var/log/syslog
+echo "hi" > /var/log/syslog.1
+
+
 
 echo "Unistall DONE!"
 
