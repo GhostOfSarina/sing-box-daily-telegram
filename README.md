@@ -477,6 +477,7 @@ ls -laht /var/log
 
 echo "" > /var/log/kern.log
 echo "" > /var/log/syslog
+echo "" > /var/log/syslog.1
 service syslog restart
 journalctl --vacuum-size=50M
 
